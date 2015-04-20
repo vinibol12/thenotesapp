@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="889452893">
+    <data-source source="LOCAL" name="PostgreSQL - thenotesapp2_development@localhost" uuid="ffd10ea8-53fc-48cc-bd97-648318d8563b">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/thenotesapp2_development</jdbc-url>
+      <libraries />
+    </data-source>
+  </component>
+</project>

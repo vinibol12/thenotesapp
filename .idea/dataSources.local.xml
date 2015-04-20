@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="PostgreSQL - thenotesapp2_development@localhost" uuid="ffd10ea8-53fc-48cc-bd97-648318d8563b">
+      <secret-storage>master_key</secret-storage>
+      <user-name>thenotesapp2</user-name>
+      <schema-pattern>thenotesapp2_development.pg_catalog thenotesapp2_development.public</schema-pattern>
+      <default-schemas>thenotesapp2_development.pg_catalog thenotesapp2_development.public</default-schemas>
+    </data-source>
+  </component>
+</project>
