@@ -40,3 +40,7 @@ end
 
 #Reguired by heroku
 gem 'rails_12factor', group: :production
+
+#Use to load angular templates
+gem 'angular-rails-templates'
+

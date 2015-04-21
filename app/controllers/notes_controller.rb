@@ -17,7 +17,7 @@ class NotesController < ApplicationController
   end
 
   def destroy
-
+    respond_with Note.destroy(params[:id])
   end
 
   private

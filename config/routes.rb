@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root to: 'application#angular'
 
- resources :notes, only: [:create, :index, :show, :update]
+ resources :notes, only: [:create, :index, :show, :update, :destroy]
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -48,7 +48,7 @@ Rails.application.routes.draw do
   #   concern :toggleable do
   #     post 'toggle'
   #   end
-  #   resources :posts, concerns: :toggleable
+  #   resources :notes, concerns: :toggleable
   #   resources :photos, concerns: :toggleable
 
   # Example resource route within a namespace:

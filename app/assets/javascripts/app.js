@@ -1,7 +1,7 @@
 function NotesProvider(){
     this.$get= angular.noop
 }
-angular.module('theNotesApp2',['ui.router'])
+angular.module('theNotesApp',['ui.router'])
      .config(['$stateProvider',
               '$urlRouterProvider',
               function($stateProvider, $urlRouterProvider){
@@ -12,10 +12,12 @@ angular.module('theNotesApp2',['ui.router'])
                           templateUrl: '/home.html',
                           controller: 'mainCtrl',
                           resolve: {
-                              notePromise: ['notesFactory', function(notesFactory) {
-                                  return notesFactory.getAll();
+                              notePromise: ['notesFactory', function(notesService) {
+                                  return notesService.getAll();
                               }]
-                          }
+                          },
+                          console: console.log('ello')
+
                       })
                       .state('navbar',{
                           url: '/navbar',
@@ -34,37 +36,11 @@ angular.module('theNotesApp2',['ui.router'])
                   $urlRouterProvider.otherwise('home');
               }
      ])
-     //read GOF factory pattern
+
+    //read GOF factory pattern
      //a factory is a factory of objects
     //when a factory is injected the injected element is the result of the factory, what it returns,
     //while when you inject a controller the controller itself is injected
-     .factory('notesFactory',['$http', function($http){
-
-        var notesService = {notesObjectInService: []};
-
-        notesService.getAll = function() {
-             return $http.get('/notes.json').success(function(data){
-                 angular.copy(data, notesService.notesObjectInService);
-             })
-        };
-        notesService.create = function(note) {
-            return $http.post('/notes.json', note).success(function(data){
-                notesService.notesObjectInService.push(data);
-            })
-        };
-        notesService.update = function(id, note) {
-            return $http.put('/notes/' + id + '.json', note).success(function(data) {
-                notesService.notesObjectInService.push(data)
-            })
-        };
-        notesService.get= function(id) {
-            return $http.get('/notes/'+ id + '.json').then(function(res) {
-                return res.data;
-            })
-        };
-
-        return notesService;
-     }])
 
     .controller('mainCtrl',['$scope', 'notesFactory', function($scope, notesService){
         $scope.notes = notesService.notesObjectInService;
@@ -80,6 +56,10 @@ angular.module('theNotesApp2',['ui.router'])
              $scope.title= '';
              $scope.body= '';
          };
+        $scope.deleteNote = function() {
+            notesService.delete($stateParams.id);
+            notesService.getAll();
+        }
      }])
 
     .controller('notesCtrl', [
