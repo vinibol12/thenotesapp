@@ -24,14 +24,15 @@ angular.module('theNotesApp',['ui.router'])
                           templateUrl: '/navbar.html',
                           controller: 'mainCtrl'
                       })
-                      .state('notes',{
+                      .state('notes', {
                           url: '/notes/{id}',
                           templateUrl: '/notes.html',
                           controller: 'notesCtrl',
                           resolve: {
-                              note: [ '$stateParams', 'notesFactory', function($stateParams , notesFactory){
-                                 return  notesFactory.get($stateParams.id);
-                          }]}
+                              note: ['$stateParams', 'notesFactory', function ($stateParams, notesService) {
+                                  return notesService.get($stateParams.id);
+                              }]
+                          }
                       });
                   $urlRouterProvider.otherwise('home');
               }
@@ -45,6 +46,8 @@ angular.module('theNotesApp',['ui.router'])
     .controller('mainCtrl',['$scope', 'notesFactory', function($scope, notesService){
         $scope.notes = notesService.notesObjectInService;
 
+        notesService.getAll();
+
         $scope.addNote = function(){
              if ($scope.title === "" ) {
                  return;
@@ -56,10 +59,10 @@ angular.module('theNotesApp',['ui.router'])
              $scope.title= '';
              $scope.body= '';
          };
-        $scope.deleteNote = function() {
-            notesService.delete($stateParams.id);
+        $scope.deleteNote = function(note) {
+            notesService.delete(note.id);
             notesService.getAll();
-        }
+        };
      }])
 
     .controller('notesCtrl', [

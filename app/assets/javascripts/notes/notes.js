@@ -24,7 +24,7 @@ angular.module('theNotesApp')
         })
     };
     notesService.delete= function(id) {
-        return $http.post('/notes/'+ id + '.json').success(function(res) {
+        return $http.delete('/notes/'+ id + '.json').success(function(res) {
             return res.data;
         })
     };

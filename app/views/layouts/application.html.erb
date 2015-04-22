@@ -64,11 +64,12 @@
   </div>
 </nav>
 <div class="col-lg-3" ng-controller="mainCtrl">
-  <div class="list-group">
-    <a href="#notes/{{note.id}}" class="list-group-item" ng-repeat="note in notes" >
+  <div class="list-group" ng-repeat="note in notes">
+    <a href="#notes/{{note.id}}"   class="list-group-item"  >
       {{note.title}}
-      <button ng-click="deleteNote(note.id);" class="btn btn-danger" >x</button>
+    <button ng-click="deleteNote(note)" class="btn btn-danger" position="right";">x</button>
     </a>
+
   </div>
 </div>
 
