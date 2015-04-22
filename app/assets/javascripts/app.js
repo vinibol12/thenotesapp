@@ -15,9 +15,7 @@ angular.module('theNotesApp',['ui.router'])
                               notePromise: ['notesFactory', function(notesService) {
                                   return notesService.getAll();
                               }]
-                          },
-                          console: console.log('ello')
-
+                          }
                       })
                       .state('navbar',{
                           url: '/navbar',
@@ -69,17 +67,14 @@ angular.module('theNotesApp',['ui.router'])
         '$scope',
         'notesFactory',
         'note',
-        '$stateParams', function(
-            $scope,
-            notesService,
-            note,
-            $stateParams) {
-                $scope.note = note;
-                $scope.title = note.title;
-                $scope.body = note.body;
-                $scope.updateNote = function() {
-                    notesService.update($stateParams.id, {title: $scope.title, body: $scope.body});
-                    notesService.getAll();
-                }
+        '$stateParams', function($scope, notesService, note, $stateParams) {
+            $scope.note = note;
+            $scope.title = note.title;
+            $scope.body = note.body;
+            $scope.updateNote = function() {
+                notesService.update($stateParams.id, {title: $scope.title, body: $scope.body});
+                notesService.getAll();
+                };
+
      }])
 
