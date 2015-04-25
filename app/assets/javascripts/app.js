@@ -1,7 +1,4 @@
-function NotesProvider(){
-    this.$get= angular.noop
-}
-angular.module('theNotesApp',['ui.router'])
+angular.module('theNotesApp', ['ui.router', 'templates', 'Devise'])
      .config(['$stateProvider',
               '$urlRouterProvider',
               function($stateProvider, $urlRouterProvider){
@@ -9,7 +6,7 @@ angular.module('theNotesApp',['ui.router'])
                       .state('home', {
                           url: '/home',
                           //the templateUrl value is the id for the routing
-                          templateUrl: '/home.html',
+                          templateUrl: 'home.html',
                           controller: 'mainCtrl',
                           resolve: {
                               notePromise: ['notesFactory', function(notesService) {
@@ -19,62 +16,33 @@ angular.module('theNotesApp',['ui.router'])
                       })
                       .state('navbar',{
                           url: '/navbar',
-                          templateUrl: '/navbar.html',
+                          templateUrl: 'navbar.html',
                           controller: 'mainCtrl'
                       })
                       .state('notes', {
-                          url: '/notes/{id}',
-                          templateUrl: '/notes.html',
+                          url: '/note/{id}',
+                          templateUrl: 'note.html',
                           controller: 'notesCtrl',
                           resolve: {
                               note: ['$stateParams', 'notesFactory', function ($stateParams, notesService) {
                                   return notesService.get($stateParams.id);
                               }]
                           }
+                      })
+                      .state('login', {
+                          url: '/login',
+                          templateUrl: 'login.html',
+                          controller: 'authCtrl'
+                      })
+                      .state('register', {
+                          url: '/register',
+                          templateUrl: 'register.html',
+                          controller: 'authCtrl'
                       });
                   $urlRouterProvider.otherwise('home');
               }
      ])
 
-    //read GOF factory pattern
-     //a factory is a factory of objects
-    //when a factory is injected the injected element is the result of the factory, what it returns,
-    //while when you inject a controller the controller itself is injected
 
-    .controller('mainCtrl',['$scope', 'notesFactory', function($scope, notesService){
-        $scope.notes = notesService.notesObjectInService;
 
-        notesService.getAll();
-
-        $scope.addNote = function(){
-             if ($scope.title === "" ) {
-                 return;
-             }
-             notesService.create({
-                 title: $scope.title,
-                 body:$scope.body
-             });
-             $scope.title= '';
-             $scope.body= '';
-         };
-        $scope.deleteNote = function(note) {
-            notesService.delete(note.id);
-            notesService.getAll();
-        };
-     }])
-
-    .controller('notesCtrl', [
-        '$scope',
-        'notesFactory',
-        'note',
-        '$stateParams', function($scope, notesService, note, $stateParams) {
-            $scope.note = note;
-            $scope.title = note.title;
-            $scope.body = note.body;
-            $scope.updateNote = function() {
-                notesService.update($stateParams.id, {title: $scope.title, body: $scope.body});
-                notesService.getAll();
-                };
-
-     }])
 

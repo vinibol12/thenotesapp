@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/html">
+<html>
 <head>
   <title>The Notes App</title>
   <style>
@@ -42,18 +42,19 @@
       </button>
       <a class="navbar-brand" href="#/home">The Notes App</a>
     </div>
-
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <div class="collapse navbar-collapse"  id="bs-example-navbar-collapse-1" ng-controller="navCtrl">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#" >+ New Note</a></li>
-        <li class="active"><a href="#">Register <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Login</a></li>
-        <li><a>Username</a></li>
-        <li><a href="#">Logout</a></li>
+        <li><a href="#/home" >+ New Note</a></li>
+        <li class="active" ng-hide="signedIn()"><a href="#register">Register <span class="sr-only">(current)</span></a></li>
+        <li ng-hide="signedIn()"><a href="#/login">Login</a></li>
+        <li ng-show="signedIn()"><a href="#/">{{user.username}}</a></li>
+        <li ng-show="signedIn()"><a ng-click="logout()">Logout</a></li>
       </ul>
     </div>
   </div>
 </nav>
+
+
 <div class="col-lg-3" ng-controller="mainCtrl">
   <!--<div>-->
       <!--<ul class="nav navbar-nav">-->
@@ -66,7 +67,7 @@
       <!--</ul>-->
   <!--</div>  -->
   <div class="list-group" ng-repeat="note in notes">
-    <a href="#notes/{{note.id}}"   class="list-group-item" style="max-height: 90px; overflow: hidden">
+    <a href="#note/{{note.id}}"   class="list-group-item" style="max-height: 90px; overflow: hidden">
           {{note.title}}
           <button  ng-click="deleteNote(note)" class="btn btn-default btn-xs" style="float: right;">Delete</button>
           <p style="text-align: justify;"  ><small>{{note.body}}</small></p>
@@ -75,49 +76,11 @@
 </div>
 
 <ui-view></ui-view>
-<script type="text/ng-template" id="/home.html">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-9" style="position: relative">
-        <form ng-submit="addNote()">
 
-          <div class="row">.</div>
-          <div class="row">
-            <input type="text" class="form-control" ng-model="title" placeholder="title">
-            <div class="row">.</div>
-            <!--<textarea rows="2" type="text" class="form-control" ng-model="body"  placeholder="enter your note here" ></textarea>-->
-            <!--<div class="row">.</div>-->
-            <div style="min-height: 348px;">
-              <textarea class="form-control" rows="2" cols="25"  ng-model="body" placeholder="Write your note here..." style="overflow: hidden; height: 500px   ; padding-top: 0px; padding-bottom: 0px; min-height: 348px;"></textarea>
-            </div>
-          </div>
-          <button  type="submit" onsubmit="parent.scrollTo(0,0)" class="btn btn-success">Save Note</button>
-        </form>
-      </div>
-    </div>
-  </div>
 
-</script>
 
-<script type="text/ng-template" controller="notesCtrl" id="/notes.html">
-  <div class="container">
-      <!--<button class="btn btn-primary">+ New Note</button>-->
-      <!--</div>-->
-          <div class="col-lg-9 " >
-            <form ng-submit="updateNote()" >
-              <div class="row">.</div>
-              <div class="row">
-                <input type="text"   class="form-control" ng-model="title" >
-                <div class="row">.</div>
-                <div  style="min-height: 348px;">
-                  <textarea class="form-control" rows="2" cols="25"  ng-model="body" placeholder="Write your note here..." style="overflow: hidden; height: 500px; padding-top: 0px; padding-bottom: 0px; min-height: 348px;"></textarea>
-                </div>            <div class="row">.</div>
-              </div>
-              <button  type="submit"  onsubmit="parent.scrollTo(0,0)" class="btn btn-success">Save Note</button>
-            </form>
-          </div>
 
-  </div>
-</script>
+
+
 </body>
 </html>

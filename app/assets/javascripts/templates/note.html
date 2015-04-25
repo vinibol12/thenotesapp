@@ -1,0 +1,15 @@
+    <!--<button class="btn btn-primary">+ New Note</button>-->
+    <!--</div>-->
+    <div class="col-lg-9 " >
+        <form ng-submit="updateNote()" >
+            <div class="row">.</div>
+            <div class="row">
+                <input type="text"   class="form-control" ng-model="title" >
+                <div class="row">.</div>
+                <div  style="min-height: 348px;">
+                    <textarea class="form-control" rows="2" cols="25"  ng-model="body" placeholder="Write your note here..." style="overflow: hidden; height: 500px; padding-top: 0px; padding-bottom: 0px; min-height: 348px;"></textarea>
+                </div>            <div class="row">.</div>
+            </div>
+            <button  type="submit"  onsubmit="parent.scrollTo(0,0)" class="btn btn-success">Save Note</button>
+        </form>
+    </div>

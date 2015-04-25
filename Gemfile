@@ -44,3 +44,7 @@ gem 'rails_12factor', group: :production
 #Use to load angular templates
 gem 'angular-rails-templates'
 
+#Use for authentication
+gem 'devise', '~> 3.4.0'
+
+gem 'sprockets', '2.12.3'
