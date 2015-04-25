@@ -1,11 +1,18 @@
 class NotesController < ApplicationController
 
   def index
-    respond_with Note.all
+
+    notes = Note.all
+
+    current_user_notes = notes.where(user_id: current_user.id)
+
+    respond_with current_user_notes
+    
+
   end
 
   def create
-    respond_with Note.create(notes_params)
+    respond_with Note.create(notes_params.merge(user_id: current_user.id))
   end
 
   def show

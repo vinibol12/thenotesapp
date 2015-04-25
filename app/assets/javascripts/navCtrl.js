@@ -1,5 +1,5 @@
 angular.module('theNotesApp')
-    .controller('navCtrl', ['$scope', 'Auth', function($scope, Auth) {
+    .controller('navCtrl', ['$scope', 'Auth', '$state', function($scope, Auth, $state) {
         $scope.signedIn = Auth.isAuthenticated;
         $scope.logout = Auth.logout;
         Auth.currentUser().then(function(user) {
@@ -13,5 +13,7 @@ angular.module('theNotesApp')
         });
         $scope.$on('devise:logout', function (e, user){
             $scope.user = {};
+            $state.go('home')
+
         });
     }])
