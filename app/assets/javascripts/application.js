@@ -4,7 +4,7 @@
 //= require navCtrl.js
 //= require authCtrl.js
 //= require notesCtrl.js
-//= require notes.js
+//= require notes_service.js
 //= require angular-devise
 //= require_tree ./templates
 

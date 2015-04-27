@@ -2,12 +2,15 @@ class NotesController < ApplicationController
 
   def index
 
-    notes = Note.all
+    notes = Note.where user_id: current_user.id
 
-    current_user_notes = notes.where(user_id: current_user.id)
+    respond_with notes
 
-    respond_with current_user_notes
-    
+
+    # current_user_notes = notes.where(user_id: current_user.id)
+    #
+    # respond_with current_user_notes
+
 
   end
 
