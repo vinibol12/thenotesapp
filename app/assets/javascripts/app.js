@@ -3,6 +3,12 @@ angular.module('theNotesApp', ['ui.router', 'templates', 'Devise'])
               '$urlRouterProvider',
               function($stateProvider, $urlRouterProvider){
                   $stateProvider
+                      .state('welcome', {
+                          url:'/welcome',
+                          templateUrl: 'welcome.html',
+                          controller: 'authCtrl'
+                      })
+
                       .state('home', {
                           url: '/home',
                           //the templateUrl value is the id for the routing
@@ -41,7 +47,8 @@ angular.module('theNotesApp', ['ui.router', 'templates', 'Devise'])
                           templateUrl: 'register.html',
                           controller: 'authCtrl'
                       });
-                  $urlRouterProvider.otherwise('home');
+
+                  $urlRouterProvider.otherwise('welcome');
               }
      ])
 

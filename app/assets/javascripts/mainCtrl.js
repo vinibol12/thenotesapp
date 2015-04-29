@@ -20,8 +20,4 @@ angular.module('theNotesApp')
             $scope.title= '';
             $scope.body= '';
         };
-        $scope.deleteNote = function(note) {
-            notesService.delete(note.id);
-            notesService.getAll();
-        };
     }])

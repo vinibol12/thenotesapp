@@ -31,7 +31,7 @@
 </head>
 
 <body ng-app="theNotesApp">
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default"  ng-controller="navCtrl" ng-show="signedIn()"  >
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -42,7 +42,7 @@
       </button>
       <a class="navbar-brand" href="#/home">The Notes App</a>
     </div>
-    <div class="collapse navbar-collapse"  id="bs-example-navbar-collapse-1" ng-controller="navCtrl">
+    <div class="collapse navbar-collapse"  id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#/home" >+ New Note</a></li>
         <li class="active" ng-hide="signedIn()"><a href="#register">Register <span class="sr-only">(current)</span></a></li>
@@ -55,7 +55,7 @@
 </nav>
 
 
-<div class="col-lg-3" ng-controller="mainCtrl">
+<div class="col-lg-3" ng-controller="mainCtrl"  >
   <!--<div>-->
       <!--<ul class="nav navbar-nav">-->
         <!--<form class="navbar-form navbar-left" role="search">-->
@@ -74,6 +74,9 @@
     </a>
   </div>
 </div>
+
+
+
 
 <ui-view></ui-view>
 

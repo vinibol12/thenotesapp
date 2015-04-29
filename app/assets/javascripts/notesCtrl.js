@@ -12,4 +12,9 @@ angular.module('theNotesApp')
                 notesService.getAll();
             };
 
+            $scope.deleteNote = function(note) {
+                notesService.delete(note.id);
+                notesService.getAll();
+            };
+
         }])
