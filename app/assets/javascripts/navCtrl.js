@@ -13,8 +13,8 @@ angular.module('theNotesApp')
         });
         $scope.$on('devise:logout', function (event, user){
             $scope.user = {};
-            notesService.getAll();
-            $state.go('welcome')
+            $state.go('welcome');
+            $scope.clear()
 
 
         });

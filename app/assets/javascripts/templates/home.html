@@ -1,4 +1,13 @@
 
+<div class="col-lg-3" ng-controller="mainCtrl">
+    <div class="list-group" ng-repeat="note in notes">
+        <a href="#note/{{note.id}}"   class="list-group-item" style="max-height: 90px; overflow: hidden">
+            {{note.title}}
+            <button  ng-click="deleteNote(note)" class="btn btn-default btn-xs" style="float: right;">Delete</button>
+            <p style="text-align: justify;"  ><small>{{note.body}}</small></p>
+        </a>
+    </div>
+</div>
 
 <div class="container">
     <div class="row">
