@@ -3,7 +3,8 @@ angular.module('theNotesApp')
         '$scope',
         'notesFactory',
         'note',
-        '$stateParams', function($scope, notesService, note, $stateParams) {
+        '$stateParams',
+        '$state', function($scope, notesService, note, $stateParams, $state) {
             $scope.note = note;
             $scope.title = note.title;
             $scope.body = note.body;
@@ -14,7 +15,10 @@ angular.module('theNotesApp')
 
             $scope.deleteNote = function(note) {
                 notesService.delete(note.id);
+                $state.go('home');
+                alert('Your note has been deleted!')
                 notesService.getAll();
+
             };
 
         }])

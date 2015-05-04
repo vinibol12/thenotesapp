@@ -1,9 +1,15 @@
 
 <div class="col-lg-3" ng-controller="mainCtrl">
-    <div class="list-group" ng-repeat="note in notes">
+    <div class="row">
+        <form class="navbar-form navbar-left" role="search">
+            <div class="form-group">
+                <input type="text" class="form-control" ng-model="searchNote" placeholder="Search">
+            </div>
+        </form>
+    </div>
+    <div class="list-group" ng-repeat="note in notes | filter: searchNote ">
         <a href="#note/{{note.id}}"   class="list-group-item" style="max-height: 90px; overflow: hidden">
             {{note.title}}
-            <button  ng-click="deleteNote(note)" class="btn btn-default btn-xs" style="float: right;">Delete</button>
             <p style="text-align: justify;"  ><small>{{note.body}}</small></p>
         </a>
     </div>

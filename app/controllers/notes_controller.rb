@@ -8,9 +8,6 @@ class NotesController < ApplicationController
 
 
 
-
-
-
     # current_user_notes = notes.where(user_id: current_user.id)
     #
     # respond_with current_user_notes
