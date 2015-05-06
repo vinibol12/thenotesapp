@@ -14,8 +14,7 @@ angular.module('theNotesApp')
         $scope.$on('devise:logout', function (event, user){
             $scope.user = {};
             $state.go('welcome');
-            $scope.clear()
-
-
+            $scope.clear();
+            alert('You have been looged out!')
         });
     }])
