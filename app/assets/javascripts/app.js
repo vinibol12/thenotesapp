@@ -1,4 +1,4 @@
-angular.module('theNotesApp', ['ui.router', 'templates', 'Devise'])
+angular.module('theNotesApp', ['ui.router', 'templates', 'Devise', 'flash'])
      .config(['$stateProvider',
               '$urlRouterProvider',
               function($stateProvider, $urlRouterProvider){
@@ -6,7 +6,7 @@ angular.module('theNotesApp', ['ui.router', 'templates', 'Devise'])
                       .state('welcome', {
                           url:'/welcome',
                           templateUrl: 'welcome.html',
-                          controller: 'authCtrl'
+                          controller: 'navCtrl'
                       })
 
                       .state('home', {

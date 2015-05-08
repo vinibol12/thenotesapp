@@ -5,6 +5,7 @@ angular.module('theNotesApp')
     //while when you inject a controller the controller itself is injected
 
     .controller('mainCtrl',['$scope', 'notesFactory', function($scope, notesService){
+
         $scope.notes = notesService.notesObjectInService;
 
         notesService.getAll();

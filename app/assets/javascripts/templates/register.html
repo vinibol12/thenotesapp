@@ -1,6 +1,7 @@
 
+<a class="navbar" href="#/welcome" style="color: #000000;"> <<< Home</a>
 
-<div class="intro-header">
+<div class="intro-header fadein">
     <div class="container">
         <div class="row">
             <div class="col-lg-4">
@@ -16,19 +17,15 @@
                                ng-model="user.email"
                                ng-maxlength=20
                                required/>
-                        <div class="error"
+                        <div class="error fadein"
                              ng-show="register_form.email.$dirty && register_form.email.$invalid">
-                            <small class="error"
+                            <small class="error fadein"
                                    ng-show="register_form.email.$error.required" style="color: black">
                                 Your email is required.
                             </small>
-                            <small class="error"
+                            <small class="error fadein"
                                    ng-show="register_form.email.$error.email" style="color: black">
-                                That is not a valid email. Please input a valid email.
-                            </small>
-                            <small class="error"
-                                   ng-show="register_form.email.$error.maxlength" style="color: black">
-                                Your name cannot be longer than 20 characters
+                                Please input a valid email.
                             </small>
                         </div>
                     </div>
@@ -43,23 +40,24 @@
                                ensure-unique="username"
                                required
                                />
-                        <div class="error"
+                        <div class="error fadein"
                              ng-show="register_form.username.$dirty && register_form.username.$invalid">
-                            <small class="error"
+                            <small class="error fadein"
                                    ng-show="register_form.username.$error.required" style="color: black">
                                 Your username is required.
                             </small>
-                            <small class="error"
+                            <small class="error fadein"
                                    ng-show="register_form.username.$error.minlength" style="color: black">
-                                Your username is required to be at least 3 characters
+                                Must be at least 3 characters
                             </small>
                             <small class="error"
                                    ng-show="register_form.username.$error.maxlength" style="color: black">
-                                Your name cannot be longer than 20 characters
+                                Maximum 20 characters
                             </small>
-                            <small class="error"
+                            <small class="error fadein"
                                    ng-show="register_form.username.$error.unique" style="color: black">
-                                This username is taken. Please choose another one.
+                                This username is taken.</br>
+                                Please choose another one.
                             </small>
                         </div>
                     </div>
@@ -72,19 +70,19 @@
                                ng-minlength="8"
                                ng-maxlength="20"
                                required>
-                        <div class="error"
+                        <div class="error fadein"
                              ng-show="register_form.password.$dirty && register_form.password.$invalid">
-                            <small class="error"
+                            <small class="error fadein"
                                    ng-show="register_form.password.$error.required" style="color: black">
                                 Your password is required.
                             </small>
-                            <small class="error"
+                            <small class="error fadein"
                                    ng-show="register_form.password.$error.minlength" style="color: black">
-                                Your password is required to be at least 8 characters
+                                Must be at least 8 characters
                             </small>
-                            <small class="error"
-                                   ng-show="register_form.password.$error.maxlength" style="color: black">
-                                Your password cannot be longer than 20 characters
+                            <small class="error fadein"
+                                   ng-show="register_form.password.$error.maxlength" style="color: black;">
+                               Maximum 20 characters
                             </small>
 
                         </div>

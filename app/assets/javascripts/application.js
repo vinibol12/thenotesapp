@@ -6,6 +6,7 @@
 //= require notesCtrl.js
 //= require notes_service.js
 //= require angular-devise
+//= require angular-flash-alert
 //= require_tree ./templates
 
 

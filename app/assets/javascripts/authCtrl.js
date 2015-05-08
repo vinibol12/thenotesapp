@@ -1,5 +1,5 @@
 angular.module('theNotesApp')
-    .controller('authCtrl',['$scope', '$state', 'Auth', function($scope, $state, Auth) {
+    .controller('authCtrl',['$scope', '$state', 'Auth',  function($scope, $state, Auth) {
         $scope.login = function() {
             Auth.login($scope.user).then(function () {
                 $state.go('home');
