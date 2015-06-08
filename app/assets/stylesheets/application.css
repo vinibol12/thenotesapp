@@ -11,6 +11,62 @@
  * file per style scope.
  *= require animate.css
  *= require landing-page.css
+ *= require nav.css
+ *= require login.css
+ *= require register.css
+ *= require note.css
  *= require_tree .
  *= require_self
  */
+
+/*div form div {*/
+    /*border: 1px dashed black;*/
+/*}*/
+
+body {
+   background-color: cadetblue;
+}
+
+.col-lg-3{
+    position: static;
+}
+.col-lg-9 {
+    position: static;
+    height: 600px;
+}
+
+#left {
+    margin-right: 2em;
+}
+
+#right {
+    margin-top: 0em;
+}
+
+#delete_button {
+
+    margin-top: 1.7em;
+    padding-bottom: 2px;
+    float: right;
+    height: 2.5em;
+    width: 12%;
+    border-radius: 5px;
+    font-weight: bold;
+    background-color: white;
+    margin-right: 1.7em;
+    margin-left: 1em;
+
+
+}
+
+#note_title {
+    width: 80%;
+    float: left;
+    margin-left: 1em;
+    margin-right: 1em;
+
+}
+
+#flash-message {
+    position: fixed;
+}

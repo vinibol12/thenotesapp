@@ -1,5 +1,5 @@
 
-<div class="col-lg-3" ng-controller="mainCtrl">
+<div class="col-lg-3"  id="left" ng-controller="mainCtrl">
     <div class="row">
         <form class="navbar-form navbar-left" role="search">
             <div class="form-group">
@@ -7,7 +7,7 @@
             </div>
         </form>
     </div>
-    <div class="list-group fadein" ng-repeat="note in notes | filter: searchNote ">
+    <div class="list-group" ng-repeat="note in notes | filter: searchNote">
         <a  href="#note/{{note.id}}"   class="list-group-item" style="max-height: 90px; overflow: hidden">
             {{note.title}}
             <p style="text-align: justify;"  ><small>{{note.body}}</small></p>
@@ -15,25 +15,17 @@
     </div>
 </div>
 
-<div class="fadein" flash-message="5000" ></div>
+<div class="container col-lg-8" id="right">
+    <div class="fadein" id="flash_message" flash-message="5000" ></div>
 
-<div class="container">
-    <div class="row">
-        <div class="col-lg-9" style="position: relative">
             <form ng-submit="addNote()">
-
-                <div class="row">.</div>
                 <div class="row">
                     <input type="text" class="form-control fadein" ng-model="title" placeholder="title">
-                    <div class="row">.</div>
-                    <!--<textarea rows="2" type="text" class="form-control" ng-model="body"  placeholder="enter your note here" ></textarea>-->
-                    <!--<div class="row">.</div>-->
                     <div style="min-height: 348px;">
                         <textarea class="form-control fadein" rows="2" cols="25"  ng-model="body" placeholder="Write your note here..." style="overflow: hidden; height: 500px   ; padding-top: 0px; padding-bottom: 0px; min-height: 348px;"></textarea>
                     </div>
                 </div>
                 <button  type="submit" onsubmit="parent.scrollTo(0,0)" class="btn btn-success">Save Note</button>
             </form>
-        </div>
     </div>
 </div>

@@ -19,6 +19,7 @@ angular.module('theNotesApp')
             $scope.updateNote = function() {
                 notesService.update($stateParams.id, {title: $scope.title, body: $scope.body});
                 notesService.getAll();
+                $state.go('home')
             };
 
             $scope.deleteNote = function(note) {

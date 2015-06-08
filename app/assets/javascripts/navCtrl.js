@@ -11,18 +11,24 @@ angular.module('theNotesApp')
             // You can inclide html as message (not just text)
             // Third argument (custom-class) is the custom class for the perticular flash alert
         };
-        Auth.currentUser().then(function(user) {
-            $scope.user = user;
-        });
-        $scope.$on('devise:new-registration', function(event, user){
-            $scope.user = user;
-        });
-        $scope.$on('devise:login', function (event, user){
-            $scope.user = user;
-        });
-        $scope.$on('devise:logout', function (event, user){
-            $scope.user = {};
-            $state.go('welcome');
-            $scope.clear();
-        });
+        //if ( !Auth.isAuthenticated()) {
+        //    $state.go('welcome')
+        //}
+        //else {
+
+            Auth.currentUser().then(function(user) {
+                $scope.user = user;
+            });
+            $scope.$on('devise:new-registration', function(event, user){
+                $scope.user = user;
+            });
+            $scope.$on('devise:login', function (event, user){
+                $scope.user = user;
+            });
+            $scope.$on('devise:logout', function (event, user){
+                $scope.user = {};
+                $state.go('welcome');
+                $scope.clear();
+            });
+        //};
     }])

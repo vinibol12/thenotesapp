@@ -46,6 +46,11 @@ angular.module('theNotesApp', ['ui.router', 'templates', 'Devise', 'flash'])
                           url: '/register',
                           templateUrl: 'register.html',
                           controller: 'authCtrl'
+                      })
+                      .state('facebook_login', {
+                          url: '/facebook_login',
+                          templateUrl: 'facebook_login.html',
+                          controller: 'authCtrl'
                       });
 
                   $urlRouterProvider.otherwise('welcome');
@@ -64,6 +69,7 @@ angular.module('theNotesApp', ['ui.router', 'templates', 'Devise', 'flash'])
             }
         }
     }])
+
 
 
 
