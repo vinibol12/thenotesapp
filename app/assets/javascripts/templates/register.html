@@ -15,7 +15,7 @@
                                class="form-control"
                                placeholder="Email"
                                ng-model="user.email"
-                               ng-maxlength=20
+                               ng-maxlength=40
                                required/>
                         <div class="error fadein"
                              ng-show="register_form.email.$dirty && register_form.email.$invalid">
@@ -25,7 +25,7 @@
                             </small>
                             <small class="error fadein"
                                    ng-show="register_form.email.$error.email" style="color: black">
-                                <Pleas></Pleas>e input a valid email.
+                                Please input a valid email.
                             </small>
                         </div>
                     </div>
