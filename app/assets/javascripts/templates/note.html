@@ -21,7 +21,8 @@
     <form  ng-submit="updateNote()" >
         <div class="row">
             <input type="text"   class="form-control fadein" id="note_title" ng-model="title" >
-            <button ng-really-message="Are you sure you want to delete this note?" ng-really-click="deleteNote(note)" type="button" class="glyphicon glyphicon-trash " id="delete_button" style="float:left;" >Delete note</button>
+            <button ng-really-message="Are you sure you want to delete this note?" ng-really-click="deleteNote(note)" type="button" class="glyphicon glyphicon-trash "
+                    id="delete_button" style="float:left;" >Delete note</button>
         </div>
         <div  style="min-height: 348px; overflow-y: scroll">
             <textarea class="form-control fadein" rows="2" cols="25"  ng-model="body" placeholder="Write your note here..." style="overflow: hidden; height: 500px; padding-top: 0px; padding-bottom: 0px; min-height: 348px;"></textarea>
@@ -30,3 +31,4 @@
         <button  type="submit"  onsubmit="parent.scrollTo(0,0)" class="btn btn-success">Save Note</button>
     </form>
 </div>
+

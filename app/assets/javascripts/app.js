@@ -37,38 +37,11 @@ angular.module('theNotesApp', ['ui.router', 'templates', 'Devise', 'flash'])
                               }]
                           }
                       })
-                      .state('login', {
-                          url: '/login',
-                          templateUrl: 'login.html',
-                          controller: 'authCtrl'
-                      })
-                      .state('register', {
-                          url: '/register',
-                          templateUrl: 'register.html',
-                          controller: 'authCtrl'
-                      })
-                      .state('facebook_login', {
-                          url: '/facebook_login',
-                          templateUrl: 'facebook_login.html',
-                          controller: 'authCtrl'
-                      });
+
 
                   $urlRouterProvider.otherwise('welcome');
               }
      ])
-    .directive('ngReallyClick', [function() {
-        return {
-            restrict: 'A',
-            link: function(scope, element, attrs) {
-                element.bind('click', function() {
-                    var message = attrs.ngReallyMessage;
-                    if (message && confirm(message)) {
-                        scope.$apply(attrs.ngReallyClick);
-                    }
-                });
-            }
-        }
-    }])
 
 
 

@@ -1,10 +1,17 @@
 
 #login {
-    float: left;
+    display: none;
+    padding-bottom: 10px;
+    margin-top: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+
+
 }
 
 #app_preview {
-    float: right;
+    /*float: right;*/
 }
 
 #login_button {
