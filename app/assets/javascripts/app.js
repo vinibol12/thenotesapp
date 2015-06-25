@@ -1,4 +1,4 @@
-angular.module('theNotesApp', ['ui.router', 'templates', 'Devise', 'flash'])
+angular.module('theNotesApp', ['ui.router', 'templates', 'Devise', 'flash', 'ngAnimate'], function(){console.log(this)})
      .config(['$stateProvider',
               '$urlRouterProvider',
               function($stateProvider, $urlRouterProvider){

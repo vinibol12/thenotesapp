@@ -2,8 +2,10 @@
 //= require app
 //= require mainCtrl.js
 //= require navCtrl.js
-//= require authCtrl.js
 //= require notesCtrl.js
+//= require welcomeCtrl.js
+//= require loginCtrl.js
+//= require registerCtrl.js
 //= require notes_service.js
 //= require angular-devise
 //= require angular-flash-alert
