@@ -1,6 +1,6 @@
 angular.module('theNotesApp')
     .controller('navCtrl', ['$scope', 'Auth', '$state', function($scope, auth, $state) {
-        $scope.signedIn = auth.isAuthenticated();
+        $scope.signedIn = auth.isAuthenticated;
         $scope.logout = auth.logout;
 
         // When the controller loads the function below is executed and the currentUser returned promise is set as
@@ -9,6 +9,7 @@ angular.module('theNotesApp')
 
         auth.currentUser().then(function(user) {
             $scope.user = user;
+            console.log(user);
         }, function() {
             console.log("no session available.")
         });

@@ -16,22 +16,12 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
-  <script>
-//  $(document).ready(function() {
-//      $("#login-button").on('click', function () {
-//          $("#login").slideToggle('slow');
-//      });
-//
-//      $("#register-button").on('click', function () {
-//          $("#register").slideToggle('slow');
-//      });
-//  });
-  </script>
+
 
 </head>
 
 <body ng-app="theNotesApp">
-<nav class="navbar navbar-default"  ng-controller="navCtrl" ng-show="signedIn()"  >
+<nav class="navbar navbar-default"  ng-controller="navCtrl" ng-show="signedIn"  >
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
