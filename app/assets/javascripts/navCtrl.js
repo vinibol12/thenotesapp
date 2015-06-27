@@ -7,18 +7,7 @@ angular.module('theNotesApp')
         //the value of $scope.user
 
 
-        auth.currentUser().then(function(user) {
-            $scope.user = user;
-            console.log(user);
-        }, function() {
-            console.log("no session available.")
-        });
 
-
-        if(auth.isAuthenticated()) {
-            $state.go('home')
-
-        };
         $scope.$on('devise:new-registration', function(event, user){
             $scope.user = user;
         });

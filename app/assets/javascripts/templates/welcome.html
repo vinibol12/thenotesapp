@@ -10,13 +10,16 @@
                     <hr>
                     <ul class="list-inline intro-social-buttons">
                         <!--Login Button-->
-                        <li class="btn btn-default btn-lg" id="login-button" ng-click="loginButton()" ><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Login</span></li>
+                        <li class="btn btn-default btn-lg"  slide-toggle="#login">
+                            <i class="fa fa-twitter fa-fw"></i> <span class="network-name">Login</span>
+                        </li>
                         <!--Register Button-->
-                        <li class="btn btn-default btn-lg" id="register-button" ng-click="registerButton()"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Register</span></li>
+                        <li class="btn btn-default btn-lg"  slide-toggle="#register">
+                            <i class="fa fa-twitter fa-fw"></i> <span class="network-name">Register</span></li>
                     </ul>
                     <div class="row">
                         <!--Slide down Login form -->
-                        <div  class=" col-lg-3 fadein fadeout" id="login" ng-show="loginForm.active"  ng-controller="loginCtrl">
+                        <div  class=" col-lg-3 slideable" id="login"   ng-controller="loginCtrl">
                             <div >
                                 <form name="login_form" novalidate ng-submit="login()">
                                     <div class="input-group">
@@ -70,7 +73,7 @@
                         </div>
 
                         <!--Slide down Register form-->
-                        <div class="col-lg- fadein fadeout" id="register" ng-show="registerForm.active" ng-controller="registerCtrl">
+                        <div class="col-lg-3 slideable" id="register" ng-controller="registerCtrl">
                             <div>
                                 <form name="register_form" novalidate ng-submit="register()">
                                     <div class="input-group">

@@ -5,8 +5,10 @@ angular.module('theNotesApp')
 
         $scope.register = function() {
             Auth.register($scope.user).then(function () {
-
                 $state.go('home');
+            },
+            function(error){
+            //    implement username availability check
             });
         };
 
