@@ -6,7 +6,15 @@ angular.module('theNotesApp')
         // When the controller loads the function below is executed and the currentUser returned promise is set as
         //the value of $scope.user
 
+        if(auth.isAuthenticated) {
+            auth.currentUser().then(function(user) {
+                $scope.user = user;
+                console.log(user);
+            }, function(error) {
 
+            })
+            $state.go('home')
+        };
 
         $scope.$on('devise:new-registration', function(event, user){
             $scope.user = user;

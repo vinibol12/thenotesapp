@@ -1,3 +1,7 @@
+.fadein {
+    animation: fadein 1s;
+}
+
 /* when hiding the picture */
 .ng-hide-add         { animation:0.5s lightSpeedOut ease; }
 
