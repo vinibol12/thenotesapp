@@ -9,12 +9,10 @@
  * compiled file so the styles you add here take precedence over styles defined in any styles
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
- *= require animate.css
  *= require landing-page.css
  *= require nav.css
- *= require login.css
- *= require register.css
- *= require note.css
+ *= require welcome.css
+ *= require note_and_home.css
  *= require_tree .
  *= require_self
  */
@@ -32,42 +30,4 @@ body {
     height: 600px;
 }
 
-#left {
-    margin-right: 2em;
-    position: static;
-}
-
-#right {
-    position: static;
-    margin-top: 0em;
-}
-
-#delete_button {
-
-    margin-top: 1.7em;
-    padding-bottom: 2px;
-    float: right;
-    height: 2.5em;
-    width: 5em;
-    border-radius: 5px;
-    font-weight: bold;
-    background-color: lightcyan;
-    margin-right: 1.7em;
-    margin-left: 1em;
-    display: inline-block;
-
-
-}
-
-#note_title {
-    width: 80%;
-    float: left;
-    margin-left: 1em;
-    margin-right: 1em;
-
-}
-
-#flash-message {
-    position: fixed;
-}
 

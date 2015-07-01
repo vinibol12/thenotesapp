@@ -17,15 +17,14 @@
 
 <div class="container col-lg-8" id="right">
     <div class="fadein" id="flash_message" flash-message="5000" ></div>
-
-            <form ng-submit="addNote()">
-                <div class="row">
-                    <input type="text" class="form-control fadein" ng-model="title" placeholder="title">
-                    <div style="min-height: 348px;">
-                        <textarea class="form-control fadein" rows="2" cols="25"  ng-model="body" placeholder="Write your note here..." style="overflow: hidden; height: 500px   ; padding-top: 0px; padding-bottom: 0px; min-height: 348px;"></textarea>
-                    </div>
-                </div>
-                <button  type="submit" onsubmit="parent.scrollTo(0,0)" class="btn btn-success">Save Note</button>
-            </form>
-    </div>
+    <form ng-submit="addNote()">
+        <div class="row">
+            <input id="note_title" type="text" class="form-control  fadein" ng-model="title" placeholder="title" >
+            <div>
+                <textarea id="textarea" class="form-control fadein" rows="2" cols="25"
+                          ng-model="body" placeholder="Write your note here..." ></textarea>
+            </div>
+        </div>
+        <button  type="submit" onsubmit="parent.scrollTo(0,0)" class="btn btn-success">Save Note</button>
+    </form>
 </div>

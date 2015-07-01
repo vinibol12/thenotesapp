@@ -1,6 +1,6 @@
 
 
-<div class="intro-header fadein">
+<div class="intro-header fade-in">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -10,16 +10,17 @@
                     <hr>
                     <ul class="list-inline intro-social-buttons">
                         <!--Login Button-->
-                        <li class="btn btn-default btn-lg"  slide-toggle="#login">
+                        <li type="button" class="btn btn-default btn-lg"  ng-click="loginButton()">
                             <i class="fa fa-twitter fa-fw"></i> <span class="network-name">Login</span>
                         </li>
                         <!--Register Button-->
-                        <li class="btn btn-default btn-lg"  slide-toggle="#register">
+                        <li class="btn btn-default btn-lg"  ng-click="registerButton()">
                             <i class="fa fa-twitter fa-fw"></i> <span class="network-name">Register</span></li>
                     </ul>
                     <div class="row">
                         <!--Slide down Login form -->
-                        <div  class=" col-lg-3 slideable" id="login"   ng-controller="loginCtrl">
+                        <!--the login variable is not suffering affect from ng-click-->
+                        <div  class=" col-lg-12 login-form"   ng-show="showLogin"  ng-controller="loginCtrl">
                             <div >
                                 <form name="login_form" novalidate ng-submit="login()">
                                     <div class="input-group">
@@ -73,7 +74,7 @@
                         </div>
 
                         <!--Slide down Register form-->
-                        <div class="col-lg-3 slideable" id="register" ng-controller="registerCtrl">
+                        <div class="col-lg-3 register-form " ng-show="showRegister" ng-controller="registerCtrl">
                             <div>
                                 <form name="register_form" novalidate ng-submit="register()">
                                     <div class="input-group">

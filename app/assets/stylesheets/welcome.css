@@ -1,0 +1,38 @@
+
+
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+
+.login-form {
+    margin: 0 auto;
+
+}
+
+.register-form {
+}
+
+.login-form, .register-form {
+    padding-bottom: 10px;
+    margin-top: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+
+}
+.login-form.ng-scope, .register-form.ng-scope {
+    opacity:0;   /*make things invisible upon start */
+    animation:fadeIn ease-in 1;
+    animation-delay: 0s;
+    /*this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+    animation-fill-mode:forwards;
+    animation-duration:1s;
+}
+
+#login_button, #register_button {
+    float: left;
+}
+
+#app_preview {
+    float: right;
+}
+

@@ -6,20 +6,24 @@ angular.module('theNotesApp')
             $state.go('home');
         }
 
-        $scope.loginForm =  false;
-        $scope.registerForm = false;
+        $scope.showLogin = false;
+        $scope.showRegister = false;
 
-        //$scope.loginButton = function(){
-        //    $scope.loginForm.active = !$scope.loginForm.active;
-        //    $scope.registerForm = { active: false};
-        //
-        //};
-        //$scope.registerButton = function(){
-        //    $scope.registerForm.active = !$scope.registerForm.active;
-        //    $scope.loginForm = { active: false};
-        //
-        //
-        //};
+
+        $scope.loginButton = function(){
+
+            $scope.showLogin = true;
+            $scope.showRegister = false;
+
+
+        };
+        $scope.registerButton = function(){
+
+            $scope.showRegister = true;
+            $scope.showLogin = false;
+
+
+        };
 
 
 

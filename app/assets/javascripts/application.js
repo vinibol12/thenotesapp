@@ -1,6 +1,5 @@
 //= require angular-rails-templates
 //= require app
-//= require appDirectives.js
 //= require mainCtrl.js
 //= require navCtrl.js
 //= require notesCtrl.js

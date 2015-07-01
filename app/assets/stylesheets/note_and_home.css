@@ -1,0 +1,29 @@
+#textarea {
+    overflow: auto;
+    min-height: 380px;
+    width: 90%;
+    margin: 2%;
+}
+
+#note_title {
+    width: 90%;
+    margin-left: 2%;
+    margin-right: 2%;
+
+}
+
+
+#left {
+    margin-right: 2em;
+    position: static;
+}
+
+#right {
+    position: static;
+    margin-top: 0em;
+}
+
+
+#flash-message {
+    position: fixed;
+}

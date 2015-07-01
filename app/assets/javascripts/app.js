@@ -1,4 +1,4 @@
-angular.module('theNotesApp', ['ui.router', 'templates', 'Devise', 'flash'])
+angular.module('theNotesApp', ['ui.router', 'templates', 'Devise', 'flash', 'ngAnimate'])
      .config(['$stateProvider',
               '$urlRouterProvider',
               function($stateProvider, $urlRouterProvider){
@@ -41,7 +41,10 @@ angular.module('theNotesApp', ['ui.router', 'templates', 'Devise', 'flash'])
 
                   $urlRouterProvider.otherwise('welcome');
               }
-     ]);
+     ])
+    .run(function ($state,$rootScope) {
+        $rootScope.$state = $state;
+    })
 
 
 
