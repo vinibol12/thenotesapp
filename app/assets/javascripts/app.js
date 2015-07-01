@@ -42,9 +42,7 @@ angular.module('theNotesApp', ['ui.router', 'templates', 'Devise', 'flash'])
                   $urlRouterProvider.otherwise('welcome');
               }
      ])
-    .run(function ($state,$rootScope) {
-        $rootScope.$state = $state;
-    })
+
 
 
 

@@ -10,6 +10,7 @@ angular.module('theNotesApp')
             $scope.note = note;
             $scope.title = note.title;
             $scope.body = note.body;
+
             function deletedNotice() {
                 var message = '<strong> Success!!</strong>  Your note has been deleted!';
                 Flash.create('success', message, 'custom-class');
@@ -33,16 +34,4 @@ angular.module('theNotesApp')
             };
 
         }])
-    .directive('ngReallyClick', [function() {
-        return {
-            restrict: 'A',
-            link: function(scope, element, attrs) {
-                element.bind('click', function() {
-                    var message = attrs.ngReallyMessage;
-                    if (message && confirm(message)) {
-                        scope.$apply(attrs.ngReallyClick);
-                    }
-                });
-            }
-        }
-    }])
+
