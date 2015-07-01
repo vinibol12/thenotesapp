@@ -19,7 +19,7 @@
     width: 50%;
 
 }
-.login-form.ng-scope, .register-form.ng-scope {
+.login-form.ng-hide, .register-form.ng-hide {
     opacity:0;   /*make things invisible upon start */
     animation:fadeIn ease-in 1;
     animation-delay: 0s;
