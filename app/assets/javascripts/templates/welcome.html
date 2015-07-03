@@ -1,5 +1,4 @@
 
-
 <div class="intro-header fade-in">
     <div class="container">
         <div class="row">
@@ -15,8 +14,21 @@
                         </li>
                         <!--Register Button-->
                         <li class="btn btn-default btn-lg"  ng-click="showRegister=!showRegister">
+                            <i class="fa fa-twitter fa-fw"></i> <span class="network-name">Register</span>
+                        </li>
+                        <li>
+                            <!--
+                              Below we include the Login Button social plugin. This button uses
+                              the JavaScript SDK to present a graphical Login button that triggers
+                              the FB.login() function when clicked.
+                            -->
 
-                            <i class="fa fa-twitter fa-fw"></i> <span class="network-name">Register</span></li>
+                            <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+                            </fb:login-button>
+
+                            <div id="status">
+                            </div>
+                        </li>
                     </ul>
                     <div class="row">
                         <!--Slide down Login form -->
