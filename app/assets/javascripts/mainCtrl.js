@@ -15,7 +15,7 @@ angular.module('theNotesApp')
                 body:$scope.body
             });
             $scope.title= '';
-            $scope.body= '';
+            $scope.body=  '';
         };
     }])
 

@@ -9,13 +9,14 @@
                     <hr>
                     <ul class="list-inline intro-social-buttons">
                         <!--Login Button-->
-                        <li type="button" class="btn btn-default btn-lg"  ng-click="showLogin=!showLogin">
+                        <li type="button" class="btn btn-default btn-lg"  ng-click="loginButton()">
                             <i class="fa fa-twitter fa-fw"></i> <span class="network-name">Login</span>
                         </li>
                         <!--Register Button-->
-                        <li class="btn btn-default btn-lg"  ng-click="showRegister=!showRegister">
+                        <li class="btn btn-default btn-lg"  ng-click="registerButton()">
                             <i class="fa fa-twitter fa-fw"></i> <span class="network-name">Register</span>
                         </li>
+                        <li><a class="btn btn-default btn-lg" href="/users/auth/facebook"> Facebook Login </a></li>
                         <li>
                             <!--
                               Below we include the Login Button social plugin. This button uses
@@ -23,11 +24,12 @@
                               the FB.login() function when clicked.
                             -->
 
-                            <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-                            </fb:login-button>
+                            <!--<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">-->
+                            <!--</fb:login-button>-->
 
-                            <div id="status">
-                            </div>
+                            <!--<div id="status">-->
+                            <!--</div>-->
+
                         </li>
                     </ul>
                     <div class="row">

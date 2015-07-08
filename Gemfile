@@ -47,4 +47,8 @@ gem 'angular-rails-templates'
 #Use for authentication
 gem 'devise', '~> 3.4.0'
 
+#Use for authentication with Devise and Facebook
+gem 'omniauth-facebook'
+
+#Use for assets pipeline
 gem 'sprockets', '2.12.3'
