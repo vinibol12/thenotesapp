@@ -45,3 +45,15 @@
     transform: translate(0%,2500%);
 }
 
+.fb-login-button {
+
+}
+
+.network-name {
+    font-weight: 800;
+}
+
+.btn.btn-default.btn-lg {
+    margin-left: 5px;
+    margin-bottom: 6px;
+}

@@ -4,7 +4,7 @@ angular.module('theNotesApp')
         $scope.logout = auth.logout;
         //$scope.delete_note =  $state;
 
-        $scope.deleteNote = $state.is("notes")
+        //$scope.deleteNote = $state.is("notes")
 
         console.log($state.is("notes"));
         // When the controller loads the function below is executed and the currentUser returned promise is set as
@@ -13,7 +13,7 @@ angular.module('theNotesApp')
         if(auth.isAuthenticated) {
             auth.currentUser().then(function(user) {
                 $scope.user = user;
-                console.log(user);
+                //console.log(user);
             }, function(error) {
 
             })

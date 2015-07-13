@@ -39,4 +39,18 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+  OmniAuth.config.test_mode = true
+  OmniAuth.config.mock_auth[:facebook] = {:provider => 'facebook', :uid => '123545'}
+
+  describe "Authentications" do
+    context "without signing into app" do
+
+      it "twitter sign in button should lead to twitter authentication page" do
+        visit root_path
+        click_link "Sign in with Twitter"
+        Authentication.last.uid.should == '123545'
+      end
+
+    end
+  end
 end

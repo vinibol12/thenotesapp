@@ -9,28 +9,15 @@
                     <hr>
                     <ul class="list-inline intro-social-buttons">
                         <!--Login Button-->
-                        <li type="button" class="btn btn-default btn-lg"  ng-click="loginButton()">
-                            <i class="fa fa-twitter fa-fw"></i> <span class="network-name">Login</span>
+                        <li id="" type="button" class="btn btn-default btn-lg" style="padding-left: 1em; padding-right:1em " ng-click="loginButton()">
+                             <span class="network-name">Login</span>
                         </li>
                         <!--Register Button-->
-                        <li class="btn btn-default btn-lg"  ng-click="registerButton()">
-                            <i class="fa fa-twitter fa-fw"></i> <span class="network-name">Register</span>
+                        <li class="btn btn-default btn-lg" ng-click="registerButton()">
+                             <span class="network-name">Register</span>
                         </li>
-                        <li><a class="btn btn-default btn-lg" href="/users/auth/facebook"> Facebook Login </a></li>
-                        <li>
-                            <!--
-                              Below we include the Login Button social plugin. This button uses
-                              the JavaScript SDK to present a graphical Login button that triggers
-                              the FB.login() function when clicked.
-                            -->
-
-                            <!--<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">-->
-                            <!--</fb:login-button>-->
-
-                            <!--<div id="status">-->
-                            <!--</div>-->
-
-                        </li>
+                        <br>
+                        <li class="row>"><a class="btn btn-block btn-social btn-facebook" href="/users/auth/facebook"><i class="fa fa-facebook"></i>Login using Facebook</a></li>
                     </ul>
                     <div class="row">
                         <!--Slide down Login form -->

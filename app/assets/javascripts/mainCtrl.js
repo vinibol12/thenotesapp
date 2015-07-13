@@ -2,7 +2,13 @@ angular.module('theNotesApp')
     .controller('mainCtrl',['$scope', 'notesFactory', function($scope, notesService){
 
         var notes = notesService.notesObjectInService;
+        $scope.$watch('notes',function(newValue, oldValue) {
+            if(newValue !== oldValue) {
 
+            console.log(newValue);
+            console.log(oldValue);
+            }
+        });
         $scope.notes = notes;
         notesService.getAll();
 

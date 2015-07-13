@@ -9,7 +9,7 @@
             </div>
         </form>
     </div>
-    <div class="list-group " ng-repeat="note in notes | filter: searchNote " >
+    <div class="list-group " ng-repeat="note in notes track by note.id  " >
         <a href="#note/{{note.id}}"   class="list-group-item" style="max-height: 90px; overflow: hidden">
             {{note.title}}
             <p style="text-align: justify;"><small>{{note.body}}</small></p>
@@ -18,12 +18,12 @@
 </div>
 
 <div class=" container col-lg-8" id="right" >
-    <form  ng-submit="updateNote()" >
+    <form >
         <div class="row">
             <input id="note_title" type="text"   class="form-control fadein"  ng-model="title" >
             <div>
                 <textarea id="textarea" class="form-control fadein" rows="2" cols="25"
-                      ng-model="body" placeholder="Write your note here..." ></textarea>
+                      ng-model="notes" placeholder="Write your note here..." ></textarea>
             </div>
                  <button  type="submit"  onsubmit="parent.scrollTo(0,0)" class="btn btn-success">Save Note</button>
             </div>

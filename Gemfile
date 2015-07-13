@@ -52,3 +52,12 @@ gem 'omniauth-facebook'
 
 #Use for assets pipeline
 gem 'sprockets', '2.12.3'
+
+#Use for integration test
+
+
+
+
+
+
+
