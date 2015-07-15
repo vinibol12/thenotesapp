@@ -47,10 +47,11 @@
 
 #search-field {
     width: 211%;
+    overflow: hidden;
 }
 
-#note-preview:nth-child(last) {
-    border-bottom: 2px solid black; }
+/*#note-preview:nth-child(last) {*/
+    /*border-bottom: 2px solid black; }*/
 
 .list-group-item:first-child {
     border-radius: 0px;
