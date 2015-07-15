@@ -1,29 +1,66 @@
-#textarea {
+#note-body {
     overflow: auto;
     min-height: 380px;
     width: 90%;
     margin: 2%;
+    border: none;
 }
 
-#note_title {
+#note-title {
     width: 90%;
     margin-left: 2%;
     margin-right: 2%;
+    margin-bottom: -1em;
+    border-right: none;
+    border-left: none;
+    border-top: none;
 
 }
 
 
 #left {
-    margin-right: 2em;
+    height:500px;
+    margin-top: -1em;
     position: static;
+    resize: both;
+
 }
 
 #right {
     position: static;
-    margin-top: 0em;
+    margin-top: 0.1em;
+    border-left: 1px solid #DDD;
+    margin-left: 0.5em;
 }
 
 
 #flash-message {
     position: fixed;
 }
+
+#note-preview {
+    border-top: 1px solid #ddd;
+    border-bottom: none;
+    border-right: none ;
+    border-left: none;
+}
+
+#search-field {
+    width: 211%;
+}
+
+#note-preview:nth-child(last) {
+    border-bottom: 2px solid black; }
+
+.list-group-item:first-child {
+    border-radius: 0px;
+}
+
+.list-group-item.note-preview {
+    border-bottom: 2px solid black;
+}
+
+.form-control {
+    border-radius: 0px;
+}
+

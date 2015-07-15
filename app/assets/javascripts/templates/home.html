@@ -3,12 +3,12 @@
     <div class="row">
         <form class="navbar-form navbar-left" role="search">
             <div class="form-group">
-                <input type="text" class="form-control" ng-model="searchNote" placeholder="Search">
+                <input id="search-field" type="text" class="form-control" ng-model="searchNote" placeholder="Find Note">
             </div>
         </form>
     </div>
     <div class="list-group" ng-repeat="note in notes | filter: searchNote">
-        <a  href="#note/{{note.id}}"   class="list-group-item" style="max-height: 90px; overflow: hidden">
+        <a  href="#note/{{note.id}}"   id="note-preview" class="list-group-item " style="max-height: 90px; overflow: hidden">
             {{note.title}}
             <p style="text-align: justify;"  ><small>{{note.body}}</small></p>
         </a>
@@ -19,14 +19,13 @@
     <div class="fadein" id="flash_message" flash-message="5000" ></div>
     <form ng-submit="addNote()">
         <div class="row">
-            <input id="note_title" type="text" class="form-control  fadein" ng-model="title" placeholder="title" >
+            <input id="note-title" type="text" class="form-control  fadein" ng-model="title" placeholder="title" >
             <div>
-                <textarea id="textarea" class="form-control fadein" rows="2" cols="25"
+                <textarea id="note-body" class="form-control fadein" rows="2" cols="25"
                           ng-model="body" placeholder="Write your note here..." ></textarea>
             </div>
         </div>
-        <button  type="submit" onsubmit="parent.scrollTo(0,0)" class="btn btn-success">Save Note</button>
+        <!--<button  type="submit" onsubmit="parent.scrollTo(0,0)" class="btn btn-success">Save Note</button>-->
     </form>
     <div data-fb-like=""></div>
-
 </div>

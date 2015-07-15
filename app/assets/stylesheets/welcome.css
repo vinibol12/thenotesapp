@@ -57,3 +57,8 @@
     margin-left: 5px;
     margin-bottom: 6px;
 }
+
+hr {
+    border-top: 1px solid black;
+
+}
