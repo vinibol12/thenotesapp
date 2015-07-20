@@ -3,17 +3,21 @@
     min-height: 380px;
     width: 90%;
     margin: 2%;
-    border: none;
+    border-bottom: none;
+    border-left: none;
+    border-left: none;
 }
 
 #note-title {
     width: 90%;
     margin-left: 2%;
     margin-right: 2%;
-    margin-bottom: -1em;
-    border-right: none;
-    border-left: none;
-    border-top: none;
+    margin-top: -0.5em;
+
+    /*border-right: none;*/
+    /*border-left: none;*/
+    /*border-top: none;*/
+    border: none;
 
 }
 
@@ -46,9 +50,10 @@
 }
 
 #search-field {
-    width: 211%;
     overflow: hidden;
+    border: none;
 }
+
 
 /*#note-preview:nth-child(last) {*/
     /*border-bottom: 2px solid black; }*/
