@@ -6,16 +6,32 @@ angular.module('theNotesApp')
         '$stateParams',
         '$state',
         'Flash',
-        '$timeout',
-        function($scope, notesService, note, $stateParams, $state, Flash, $timeout) {
+        '$interval',
+        function($scope, notesService, note, $stateParams, $state, Flash, $interval) {
             $scope.note = note;
             $scope.title = note.title;
             $scope.body = note.body;
-            //console.log(note);
-            //console.log(note.title);
-            //console.log(note.body);
+
+            var contentChanged = false;
+
+            $scope.$watchGroup(['title', 'body'], function(newValue, oldValue) {
+                if (newValue !== oldValue) {
+                    contentChanged = true;
+                }
+            });
+
+            function checkForChangeAndSave() {
+                if(contentChanged) {
+                    updateNote();
+                    contentChanged = false;
+                }
+            }
+
+            $interval(checkForChangeAndSave, 5000);
+
+
             function updateNote() {
-                notesService.update($stateParams.id, {title: $scope.title});
+                notesService.update($stateParams.id, {title: $scope.title, body: $scope.body});
                 notesService.getAll();
             };
 
@@ -23,12 +39,6 @@ angular.module('theNotesApp')
                 var message = '<strong> Success!!</strong>  Your note has been deleted!';
                 Flash.create('success', message, 'custom-class');
             };
-
-            $scope.$watch('title',function(newValue, oldValue) {
-                if (newValue !== oldValue) {
-                    $timeout( updateNote , 5000);
-                };
-            });
 
             $scope.deleteNote = function(note) {
                 notesService.delete(note.id);

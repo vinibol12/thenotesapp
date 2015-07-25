@@ -8,7 +8,6 @@ angular.module('theNotesApp', ['ui.router', 'templates', 'Devise', 'flash', 'ngA
                           templateUrl: 'welcome.html',
                           controller: 'navCtrl'
                       })
-
                       .state('home', {
                           url: '/home',
                           //the templateUrl value is the id for the routing
@@ -18,7 +17,7 @@ angular.module('theNotesApp', ['ui.router', 'templates', 'Devise', 'flash', 'ngA
                               notePromise: ['notesFactory', function(notesService) {
                                   return notesService.getAll();
                               }]
-                          }
+                           }
                       })
                       .state('navbar',{
                           url: '/navbar',
@@ -26,7 +25,6 @@ angular.module('theNotesApp', ['ui.router', 'templates', 'Devise', 'flash', 'ngA
                           controller: 'mainCtrl'
                       })
                       //Task: implement state in case note is empty go back to home state.
-
                       .state('notes', {
                           url: '/note/{id}',
                           templateUrl: 'note.html',
@@ -37,8 +35,6 @@ angular.module('theNotesApp', ['ui.router', 'templates', 'Devise', 'flash', 'ngA
                               }]
                           }
                       })
-
-
                   $urlRouterProvider.otherwise('welcome');
               }
      ])

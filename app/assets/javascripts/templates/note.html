@@ -9,7 +9,7 @@
             </div>
         </form>
     </div>
-    <div class="list-group " ng-repeat="note in notes  | filter: searchNote " >
+    <div class="list-group " ng-repeat="note in notes track by $index" >
         <a href="#note/{{note.id}}"  id="note-preview" class="list-group-item" style="max-height: 90px; overflow: hidden">
             {{note.title}}
             <p style="text-align: justify;"><small>{{note.body}}</small></p>

@@ -1,18 +1,30 @@
 angular.module('theNotesApp')
-    .controller('mainCtrl',['$scope', 'notesFactory', function($scope, notesService){
+    .controller('mainCtrl',['$scope', 'notesFactory', '$interval', '$state', function($scope, notesService, $interval, $state){
 
         var notes = notesService.notesObjectInService;
-        $scope.$watch('notes',function(newValue, oldValue) {
-            if(newValue !== oldValue) {
 
-            console.log(newValue);
-            console.log(oldValue);
-            }
-        });
         $scope.notes = notes;
         notesService.getAll();
 
-        $scope.addNote = function(){
+
+        var contentChanged = false;
+
+        $scope.$watchGroup(['title', 'body'], function(newValue, oldValue) {
+            if (newValue !== oldValue) {
+                contentChanged = true;
+            }
+        });
+
+        function checkForChangeAndSave() {
+            if(contentChanged) {
+                addNote();
+                contentChanged = false;
+            }
+        }
+
+        $interval(checkForChangeAndSave, 5000);
+
+        function addNote(){
             if ($scope.title === "" ) {
                 return;
             }
@@ -20,9 +32,13 @@ angular.module('theNotesApp')
                 title: $scope.title,
                 body:$scope.body
             });
-            $scope.title= '';
-            $scope.body=  '';
+
         };
+        $scope.$watch(function() { return notesService.newNote; }, function(newVa, oldVa) {
+            if (newVa !== oldVa) {
+                $state.go('notes', newVa)
+            }
+        }, true);
     }])
 
     //read GOF factory pattern
