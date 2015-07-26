@@ -10,7 +10,7 @@ angular.module('theNotesApp')
         var contentChanged = false;
 
         $scope.$watchGroup(['title', 'body'], function(newValue, oldValue) {
-            if (newValue !== oldValue) {
+            if (newValue !== oldValue && $state.is('home')) {
                 contentChanged = true;
             }
         });

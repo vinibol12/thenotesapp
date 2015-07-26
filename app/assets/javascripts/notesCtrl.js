@@ -12,6 +12,8 @@ angular.module('theNotesApp')
             $scope.title = note.title;
             $scope.body = note.body;
 
+            console.log($state.is('notes'))
+
             var contentChanged = false;
 
             $scope.$watchGroup(['title', 'body'], function(newValue, oldValue) {

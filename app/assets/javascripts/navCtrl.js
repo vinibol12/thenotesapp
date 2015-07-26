@@ -2,9 +2,9 @@ angular.module('theNotesApp')
     .controller('navCtrl', ['$scope', 'Auth', '$state', function($scope, auth, $state) {
         $scope.signedIn = auth.isAuthenticated;
         $scope.logout = auth.logout;
-        //$scope.delete_note =  $state;
 
-        //$scope.deleteNote = $state.is("notes")
+        $scope.notesState = $state.is('notes')
+
 
         console.log($state.is("notes"));
         // When the controller loads the function below is executed and the currentUser returned promise is set as

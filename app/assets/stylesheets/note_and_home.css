@@ -70,3 +70,11 @@
     border-radius: 0px;
 }
 
+#delete-button{
+    margin: 1.5em 1.2em 2em 1.2em;
+    cursor: pointer;
+}
+
+#delete.show {
+    display: flex;
+}

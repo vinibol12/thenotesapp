@@ -9,6 +9,7 @@
 //= require notes_service.js
 //= require angular-devise
 //= require angular-flash-alert
+//= require directives
 //= require_tree ./templates
 
 
