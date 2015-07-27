@@ -32,9 +32,10 @@
 
 #right {
     position: static;
-    margin-top: 0.1em;
+    margin-top: 1em;
     border-left: 1px solid #DDD;
     margin-left: 0.5em;
+
 }
 
 

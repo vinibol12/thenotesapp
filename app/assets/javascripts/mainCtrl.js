@@ -9,22 +9,22 @@ angular.module('theNotesApp')
 
         var contentChanged = false;
 
-        $scope.$watchGroup(['title', 'body'], function(newValue, oldValue) {
-            if (newValue !== oldValue && $state.is('home')) {
-                contentChanged = true;
-            }
-        });
+        //$scope.$watchGroup(['title', 'body'], function(newValue, oldValue) {
+        //    if (newValue !== oldValue && $state.is('home')) {
+        //        contentChanged = true;
+        //    }
+        //});
 
-        function checkForChangeAndSave() {
-            if(contentChanged) {
-                addNote();
-                contentChanged = false;
-            }
-        }
+        //function checkForChangeAndSave() {
+        //    if(contentChanged) {
+        //        addNote();
+        //        contentChanged = false;
+        //    }
+        //}
+        //
+        //$interval(checkForChangeAndSave, 5000);
 
-        $interval(checkForChangeAndSave, 5000);
-
-        function addNote(){
+        $scope.addNote = function() {
             if ($scope.title === "" ) {
                 return;
             }
@@ -32,8 +32,8 @@ angular.module('theNotesApp')
                 title: $scope.title,
                 body:$scope.body
             });
-
         };
+        //Watches for changes in the value of note and if there is a change it moves to the just created note's state
         $scope.$watch(function() { return notesService.newNote; }, function(newVa, oldVa) {
             if (newVa !== oldVa) {
                 $state.go('notes', newVa)

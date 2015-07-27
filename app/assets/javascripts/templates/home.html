@@ -17,7 +17,7 @@
 
 <div class="container col-lg-8" id="right" >
     <div class="fadein" id="flash_message" flash-message="5000" ></div>
-    <form>
+    <form ng-submit="addNote()" ng-controller="mainCtrl">
         <div class="row">
             <input id="note-title" type="text" class="form-control  fadein" ng-model="title" placeholder="Untitled" >
             <div>
@@ -25,7 +25,7 @@
                           ng-model="body" placeholder="Write your note here..." ></textarea>
             </div>
         </div>
-        <!--<button  type="submit" onsubmit="parent.scrollTo(0,0)" class="btn btn-success">Save Note</button>-->
+        <button  type="submit"  >Save Note</button>
     </form>
     <div data-fb-like=""></div>
 </div>

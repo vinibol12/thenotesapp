@@ -3,7 +3,7 @@ angular.module('theNotesApp')
         $scope.signedIn = auth.isAuthenticated;
         $scope.logout = auth.logout;
 
-        $scope.notesState = $state.is('notes')
+        $scope.notesState = function(){return $state.is('notes')}
 
 
         console.log($state.is("notes"));
