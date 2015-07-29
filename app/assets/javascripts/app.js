@@ -19,12 +19,6 @@ angular.module('theNotesApp', ['ui.router', 'templates', 'Devise', 'flash', 'ngA
                               }]
                            }
                       })
-                      .state('navbar',{
-                          url: '/navbar',
-                          templateUrl: 'navbar.html',
-                          controller: 'mainCtrl'
-                      })
-                      //Task: implement state in case note is empty go back to home state.
                       .state('notes', {
                           url: '/note/{id}',
                           templateUrl: 'note.html',

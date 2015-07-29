@@ -8,7 +8,8 @@ class NotesController < ApplicationController
 
     for x in 0..notes.length-1
       note = notes[x]
-      notes_trimmed << {title: note.title, body: note.body, id: note.id}
+      notes_trimmed << {title: note.title, body: note.body, id: note.id, uptdated_at: note.updated_at}
+      puts notes_trimmed
     end
     # responding with only the necessary attributes of each note to the front end.
     respond_with notes_trimmed

@@ -1,17 +1,13 @@
 angular.module('theNotesApp')
-    .controller('registerCtrl', ['$scope','Auth', '$state', function($scope, Auth, $state ){
-
-
-
+    .controller('registerCtrl', ['$scope','Auth', '$state', '$http', function($scope, Auth, $state, $http ){
         $scope.register = function() {
             Auth.register($scope.user).then(function () {
-                $state.go('home');
-            },
-            function(error){
-            //    implement username availability check
+                $http.get('/notes.json').success(function(data){
+                    $scope.notes = data;
+                    var arraySize = $scope.notes.length-1;
+                    var lastNote = $scope.notes[arraySize];
+                    $state.go('notes', lastNote);
+                });
             });
         };
-
-
-
     }])

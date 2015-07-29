@@ -15,16 +15,16 @@
 </div>
 <div class=" container col-lg-8" id="right" >
     <div id="delete-button" class="row">
-        <a  ng-really-message="Are you sure you want to delete this note?" ng-really-click="deleteNote(note)" class="glyphicon glyphicon-trash " style="float:left;">Delete</a>
+        <a  ng-really-message="Are you sure you want to delete this note?" ng-really-click="deleteNote(note)" class="glyphicon glyphicon-trash " style="float:left;"></a>
     </div>
     <form >
         <div class="row">
-            <input id="note-title" type="text"   class="form-control fadein"  ng-model="title" placeholder="Untitled">
+            <input id="note-title" type="text"   class="form-control"  ng-model="title" placeholder="Untitled">
             <div>
                 <textarea id="note-body" class="form-control fadein" rows="2" cols="25"
                       ng-model="body" placeholder="Write your note here..." ></textarea>
             </div>
-            </div>
+        </div>
     </form>
     <div data-fb-like=""></div>
 </div>

@@ -1,7 +1,7 @@
 angular.module('theNotesApp')
 .factory('notesFactory',['$http', function($http){
 
-    var notesService = {notesObjectInService: [], newNote: null};
+    var notesService = {notesObjectInService: [], newNote: null, note: null};
 
 
     notesService.getAll = function() {
