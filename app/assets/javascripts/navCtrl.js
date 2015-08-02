@@ -1,12 +1,19 @@
 angular.module('theNotesApp')
-    .controller('navCtrl', ['$scope', 'Auth', '$state', function($scope, auth, $state) {
+    .controller('navCtrl', ['$scope', 'Auth', '$state', 'notesFactory', function($scope, auth, $state, notesService) {
         $scope.signedIn = auth.isAuthenticated;
         $scope.logout = auth.logout;
 
         $scope.notesState = function(){return $state.is('notes')}
 
-
-
+        $scope.addNote = function() {
+            notesService.create({
+                    title: 'Untitled',
+                    body: ''
+                }
+            ).success(function(note){
+                $state.go('notes', note)
+            });
+        };
         //notesService.getAll().then(function(res){
         //
         //    $scope.cleanArrayOfNotes = res.data;

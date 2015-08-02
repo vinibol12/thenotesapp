@@ -13,7 +13,7 @@
     margin-left: 2%;
     margin-right: 2%;
     margin-top: -0.5em;
-
+    font-size: larger;
     /*border-right: none;*/
     /*border-left: none;*/
     /*border-top: none;*/
@@ -32,7 +32,7 @@
 
 #right {
     position: static;
-    margin-top: 1em;
+    margin-top: -0.4em;
     border-left: 1px solid #DDD;
     margin-left: 0.5em;
 
@@ -72,7 +72,7 @@
 }
 
 #delete-button{
-    margin: 1.5em 1.2em 2em 1.2em;
+    margin: 1.5em 1.2em 1.5% 90% ;
     cursor: pointer;
 }
 

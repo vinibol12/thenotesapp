@@ -6,3 +6,6 @@
     background-color: rgba(207, 206, 190, 0.88)
 }
 
+#new-note {
+    cursor: pointer;
+}

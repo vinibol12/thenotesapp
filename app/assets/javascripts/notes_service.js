@@ -27,7 +27,7 @@ angular.module('theNotesApp')
     };
     notesService.delete= function(id) {
         return $http.delete('/notes/'+ id + '.json').success(function(res) {
-            return res.data;
+           return res.data;
         })
     };
 

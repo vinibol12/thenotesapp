@@ -1,7 +1,7 @@
 angular.module('theNotesApp')
     .controller('mainCtrl',['$scope', 'notesFactory', '$interval', '$state', function($scope, notesService, $interval, $state){
 
-        var notes = notesService.notesObjectInService;
+
 
         $scope.notes = notes;
         notesService.getAll();
@@ -24,15 +24,7 @@ angular.module('theNotesApp')
         //
         //$interval(checkForChangeAndSave, 5000);
 
-        $scope.addNote = function() {
-            if ($scope.title === "" ) {
-                return;
-            }
-            notesService.create({
-                title: $scope.title,
-                body:$scope.body
-            });
-        };
+
         //Watches for changes in the value of note and if there is a change it moves to the just created note's state
         $scope.$watch(function() { return notesService.newNote; }, function(newVa, oldVa) {
             if (newVa !== oldVa) {
