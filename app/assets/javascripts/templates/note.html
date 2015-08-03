@@ -10,7 +10,7 @@
     <div class="list-group " ng-repeat="note in notes | reverse |filter: searchNote  track by $index" >
         <a href="#note/{{note.id}}"  id="note-preview" class="list-group-item"  style="max-height: 90px; overflow: hidden">
             {{note.title}}
-            <p style="text-align: justify;"><small>{{note.body}}</small></p>
+            <p style="text-align: justify;"><small><span style="color: dodgerblue; font-weight: 200">{{noteCreationDate}}</span> -{{note.body}}</small></p>
         </a>
     </div>
 </div>
@@ -28,6 +28,7 @@
             </div>
         </div>
     </form>
+    <div id="timestamp">Created on {{noteCreationDate}} at {{noteCreationTime}}</div>
     <div data-fb-like=""></div>
 </div>
 

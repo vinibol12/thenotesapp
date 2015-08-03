@@ -15,6 +15,12 @@ angular.module('theNotesApp')
             $scope.body = note.body;
             $scope.notes = notesService.notesObjectInService
 
+            var noteCreationDateAndTime = note.created_at.split("T")
+            var noteCreationTime = noteCreationDateAndTime[1].split(".")
+
+            $scope.noteCreationTime = noteCreationTime[0]
+            $scope.noteCreationDate = noteCreationDateAndTime[0]
+
 
             var contentChanged = false;
 

@@ -79,3 +79,11 @@
 #delete.show {
     display: flex;
 }
+
+#timestamp {
+    color: blue;
+    font-weight: 200;
+    font-style: italic;
+    margin-bottom: 0.5em;
+
+}

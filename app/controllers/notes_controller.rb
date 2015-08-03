@@ -8,7 +8,7 @@ class NotesController < ApplicationController
 
     for x in 0..notes.length-1
       note = notes[x]
-      notes_trimmed << {title: note.title, body: note.body, id: note.id, uptdated_at: note.updated_at}
+      notes_trimmed << {title: note.title, body: note.body, id: note.id, uptdated_at: note.updated_at, created_at: note.created_at}
       if x == notes.length-1
         puts notes_trimmed
       end
