@@ -12,12 +12,14 @@
  *= require landing-page.css
  *= require nav.css
  *= require welcome.css
+ *= require animate.css
  *= require note_and_home.css
  *= require_tree .
  *= require_self
  */
 
-/** {*/
+/**{*/
+
     /*border: 1px dashed black;*/
 /*}*/
 

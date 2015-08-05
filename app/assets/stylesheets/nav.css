@@ -3,7 +3,9 @@
 }
 
 .navbar-default {
-    background-color: rgba(207, 206, 190, 0.88)
+    background-color: rgba(207, 206, 190, 0.88);
+    position: absolute;
+    width: 100%;
 }
 
 #new-note {

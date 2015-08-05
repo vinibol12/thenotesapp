@@ -21,7 +21,7 @@ angular.module('theNotesApp')
             $scope.noteCreationTime = noteCreationTime[0]
             $scope.noteCreationDate = noteCreationDateAndTime[0]
 
-
+            
             var contentChanged = false;
 
             $scope.$watchGroup(['title', 'body'], function(newValue, oldValue) {
@@ -65,7 +65,6 @@ angular.module('theNotesApp')
                         $state.go('notes', lastNote)
                         deletedNotice();
                     });
-                $state.go('');
                 notesService.getAll();
             };
         }])

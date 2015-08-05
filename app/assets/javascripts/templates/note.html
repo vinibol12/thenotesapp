@@ -7,15 +7,15 @@
             </div>
         </form>
     </div>
-    <div class="list-group " ng-repeat="note in notes | reverse |filter: searchNote  track by $index" >
+    <div id="notes-list" class="list-group animated fadeIn " ng-repeat="note in notes | reverse |filter: searchNote  track by $index" >
         <a href="#note/{{note.id}}"  id="note-preview" class="list-group-item"  style="max-height: 90px; overflow: hidden">
             {{note.title}}
             <p style="text-align: justify;"><small><span style="color: dodgerblue; font-weight: 200">{{noteCreationDate}}</span> -{{note.body}}</small></p>
         </a>
     </div>
 </div>
-<div class=" container col-lg-8" id="right" >
-    <div class="fadein" id="flash_message" flash-message="3000" ></div>
+<div class=" container col-lg-8 animated fadeIn" id="right">
+    <div class="animated fadeIn"  style="" id="flash-message" flash-message="3000"></div>
     <div id="delete-button" class="row">
         <a  ng-really-message="Are you sure you want to delete this note?" ng-really-click="deleteNote(note)" class="glyphicon glyphicon-trash " style="float:left;"></a>
     </div>
@@ -23,12 +23,11 @@
         <div class="row">
             <input id="note-title" type="text"   class="form-control"  ng-model="title" placeholder="Untitled">
             <div>
-                <textarea id="note-body" class="form-control fadein" rows="2" cols="25"
+                <textarea id="note-body" class="form-control" rows="2" cols="25"
                       ng-model="body" placeholder="Write your note here..." ></textarea>
             </div>
         </div>
     </form>
     <div id="timestamp">Created on {{noteCreationDate}} at {{noteCreationTime}}</div>
-    <div data-fb-like=""></div>
 </div>
 
