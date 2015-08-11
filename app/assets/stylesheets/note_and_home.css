@@ -1,41 +1,86 @@
+section{
+    flex: 1;
+
+}
+
+section.resizable {
+    flex: 0 0 300px;
+
+}
+
+textarea {
+    resize: none;
+    margin-right: 1em;
+}
+.resizable-row {
+    min-height: 50px;
+    flex: 1;
+    width: 100%;
+    display: inline-flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-content: space-around;
+}
+
+.resizable-row.resizable {
+    flex: 0 0 300px;
+}
+
+.list-group-item:first-child {
+    border-radius: 0px;
+}
+
+.list-group-item.note-preview {
+    border-bottom: 2px solid black;
+}
+
+.form-control {
+    border-radius: 0px;
+}
+
+
 #note-body {
-    overflow: auto;
     min-height: 380px;
-    width: 909px;
-    margin: 2%;
+    width: 98%;
     border-bottom: none;
     border-left: none;
     border-left: none;
 }
 
 #note-title {
-    width: 909px;
-    margin-left: 2%;
+    width: 85%;
+    margin-left: 1%;
     margin-right: 2%;
+    margin-top: 2%;
     font-size: larger;
     /*border-right: none;*/
     /*border-left: none;*/
     /*border-top: none;*/
     border: none;
-
 }
 
 
+#delete-button{
+    float: right;
+    margin: 2% 2em  ;
+    cursor: pointer;
+    height: 10px;
+    width: 10px;
+}
+
 #left {
-    height:500px;
+    height: 500px;
+    width: 30%;
     margin-top: 5em;
-    position: static;
-    resize: both;
-    overflow: scroll;
-
-
+    overflow-y: scroll;
+    overflow-x: inherit;
+    flex: 1;
 }
 
 #right {
-    position: static;
-    margin-top: 5em;
-    border-left: 1px solid #DDD;
-    margin-left: 0.5em;
+    /*border-left: 1px solid #DDD;*/
+    margin: 5em 1em 0 1em;
+    flex-basis: 70%;
 
 }
 
@@ -51,35 +96,19 @@
     border-bottom: none;
     border-right: none ;
     border-left: none;
+
 }
 
 #notes-list {
+    word-wrap: break-word;
 }
 
 #search-field {
-    overflow: hidden;
+    width: 100%;
+    height: 40px;
     border: none;
-}
-
-
-/*#note-preview:nth-child(last) {*/
-    /*border-bottom: 2px solid black; }*/
-
-.list-group-item:first-child {
-    border-radius: 0px;
-}
-
-.list-group-item.note-preview {
-    border-bottom: 2px solid black;
-}
-
-.form-control {
-    border-radius: 0px;
-}
-
-#delete-button{
-    margin: 1.5em 1.2em 1.5% 95% ;
-    cursor: pointer;
+    margin: 0 2em -1em 15px;
+    overflow-x: auto;
 }
 
 #delete.show {
@@ -90,8 +119,9 @@
     color: blue;
     font-weight: 200;
     font-style: italic;
-    margin-bottom: 0.5em;
+    margin:0 0 0.5em 1em;
     background-color: rgba(207, 206, 190, 0.88);
-    border-radius: 2%;
-
+    border-radius: 2%;.
+    position: relative;
+    width: 96.6%;
 }

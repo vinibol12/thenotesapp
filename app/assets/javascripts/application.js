@@ -10,6 +10,7 @@
 //= require angular-devise
 //= require angular-flash-alert
 //= require directives
+//= require angular-resizable
 //= require_tree ./templates
 
 

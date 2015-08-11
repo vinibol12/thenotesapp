@@ -1,4 +1,4 @@
-angular.module('theNotesApp', ['ui.router', 'templates', 'Devise', 'flash', 'ngAnimate'])
+angular.module('theNotesApp', ['ui.router', 'templates', 'Devise', 'flash', 'ngAnimate', 'angularResizable'])
      .config(['$stateProvider',
               '$urlRouterProvider',
               function($stateProvider, $urlRouterProvider){
@@ -34,12 +34,9 @@ angular.module('theNotesApp', ['ui.router', 'templates', 'Devise', 'flash', 'ngA
                           resolve: {
                               note: ['$stateParams', 'notesFactory', function ($stateParams, notesService) {
                                   return notesService.get($stateParams.id);
-                              }],
-
+                              }]
                           }
                       })
-
-
                   $urlRouterProvider.otherwise('welcome');
               }
      ])
