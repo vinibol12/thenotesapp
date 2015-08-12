@@ -42,9 +42,11 @@ textarea {
 #note-body {
     min-height: 380px;
     width: 98%;
+    height: 80vh;
     border-bottom: none;
     border-left: none;
-    border-left: none;
+    border-right: none;
+    border-top: none;
 }
 
 #note-title {
@@ -69,7 +71,7 @@ textarea {
 }
 
 #left {
-    height: 500px;
+    height: 100vh;
     width: 30%;
     margin-top: 5em;
     overflow-y: scroll;
@@ -81,7 +83,12 @@ textarea {
     /*border-left: 1px solid #DDD;*/
     margin: 5em 1em 0 1em;
     flex-basis: 70%;
+    height: 100vh;
 
+}
+
+#bottom {
+    flex: 1;
 }
 
 
@@ -119,9 +126,10 @@ textarea {
     color: blue;
     font-weight: 200;
     font-style: italic;
-    margin:0 0 0.5em 1em;
+    margin:0 0 0.5em -0.5em;
     background-color: rgba(207, 206, 190, 0.88);
     border-radius: 2%;.
     position: relative;
     width: 96.6%;
+    flex: 1;
 }
