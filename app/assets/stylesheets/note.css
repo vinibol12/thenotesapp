@@ -11,7 +11,10 @@ section.resizable {
 textarea {
     resize: none;
     margin-right: 1em;
+    position: relative;
+    height: 700px;
 }
+
 .resizable-row {
     min-height: 50px;
     flex: 1;
@@ -40,13 +43,11 @@ textarea {
 
 
 #note-body {
-    min-height: 380px;
     width: 98%;
-    height: 80vh;
-    border-bottom: none;
-    border-left: none;
-    border-right: none;
-    border-top: none;
+    height: 100%;
+    border: none;
+    height: 700px;
+
 }
 
 #note-title {
@@ -64,27 +65,29 @@ textarea {
 
 #delete-button{
     float: right;
-    margin: 2% 2em  ;
+    margin: 2.5% 2em;
     cursor: pointer;
     height: 10px;
     width: 10px;
+    z-index: 1;
+    position: absolute;
+    margin-left: 90%;
 }
 
 #left {
-    height: 100vh;
+    height: 95vh;
     width: 30%;
     margin-top: 5em;
     overflow-y: scroll;
     overflow-x: inherit;
     flex: 1;
+
 }
 
 #right {
-    /*border-left: 1px solid #DDD;*/
     margin: 5em 1em 0 1em;
     flex-basis: 70%;
-    height: 100vh;
-
+    overflow: hidden;
 }
 
 #bottom {
@@ -94,16 +97,15 @@ textarea {
 
 #flash-message {
     position: absolute;
-    width: 906px;
+    width: 200px;
     margin-top: -0.8em;
-}
+    z-index: 1}
 
 #note-preview {
     border-top: 1px solid #ddd;
     border-bottom: none;
     border-right: none ;
     border-left: none;
-
 }
 
 #notes-list {
@@ -123,13 +125,19 @@ textarea {
 }
 
 #timestamp {
+    height: 30px;
     color: blue;
     font-weight: 200;
     font-style: italic;
-    margin:0 0 0.5em -0.5em;
-    background-color: rgba(207, 206, 190, 0.88);
-    border-radius: 2%;.
-    position: relative;
-    width: 96.6%;
-    flex: 1;
+    margin:1em 0 0 0.2em;
+    background-color: rgba(207, 206, 190, 1);
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    opacity: 1;
+    /*left: 0;*/
 }
+#timestamp span {
+margin-top: 10%;
+margin-left: 24%;}
+

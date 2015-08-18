@@ -1,5 +1,5 @@
 <!--I was making a mistake here. I was passing ng-controller=notesCtrl and I was getting an error-->
-<div  class="resizable-row" resizable r-directions="['bottom']" r-flex="true"   >
+<div  class="resizable-row" resizable r-directions="[]" r-flex="true"   >
     <section  id="left">
         <div class="row">
             <form class=" " role="search">
@@ -15,26 +15,72 @@
             </a>
         </div>
     </section>
+
+    <!--right side section wrapper-->
     <section class=" animated fadeIn" id="right"  resizable r-directions="['left']" r-flex="true" >
-        <div class="animated fadeIn"  style="" id="flash-message" flash-message="3000"></div>
+        <!--flash message only visible on event-->
+        <div class="animated fadeIn"  style="position: absolute;" id="flash-message" style="width: 50px" flash-message="3000"></div>
+        <!--delete button should stay on the right hand side of title-->
         <div id="delete-button" >
             <a  ng-really-message="Are you sure you want to delete this note?" ng-really-click="deleteNote(note)" class="glyphicon glyphicon-trash" style="float:left;"></a>
         </div>
-        <div>
-            <form >
-                <div >
-                    <input id="note-title" type="text"   ng-model="title" placeholder="Untitled">
-                    <textarea id="note-body" class="form-control" rows="2" cols="25"
-                              ng-model="body" placeholder="Write your note here..." ></textarea>
-                </div>
-            </form>
+
+        <!--wrapper section for the form with title and body-->
+        <section  resizable r-directions="[]">
+                  <div>
+                    <input id="note-title" type="text" ng-model="title" class="form-control" placeholder="Untitled">
+                    <textarea  resizable r-directions="['top']" id="note-body" class="form-control" rows="30"
+                              ng-model="body" placeholder="Write your note here..." style="flex-basis: auto 100%" ></textarea>
+                  </div>
+
+        </section>
+
+        <div id="timestamp">
+            <span>Created on {{noteCreationDate}} at {{noteCreationTime}}</span>
         </div>
-        <div class="row" id="timestamp">Created on {{noteCreationDate}} at {{noteCreationTime}}</div>
     </section>
 </div>
 
+<!--<style>-->
+    <!--body {-->
+    	<!--margin:0;-->
+    	<!--padding:0;-->
+    	<!--height:100%;-->
+    <!--}-->
+    <!--#wrapper {-->
+    	<!--min-height:100%;-->
+    	<!--position:relative;-->
+    <!--}-->
+    <!--#header {-->
+    	<!--background:#ededed;-->
+    	<!--padding:10px;-->
+    <!--}-->
+    <!--#content {-->
+    	<!--padding-bottom:100px; /* Height of the footer element */-->
+    <!--}-->
+    <!--#footer {-->
+        <!--background: #ffab62;-->
+        <!--width: 100%;-->
+        <!--height: 100px;-->
+        <!--position: absolute;-->
+        <!--bottom: 0;-->
+        <!--left: 0;-->
 
+    <!--}-->
+    <!--</style>-->
+ <!--<body>-->
 
+	<!--<div id="wrapper">-->
 
+ 		<!--<div id="header">-->
+		<!--</div>&lt;!&ndash; #header &ndash;&gt;-->
 
+		<!--<div id="content">-->
+ 		<!--</div>&lt;!&ndash; #content &ndash;&gt;-->
 
+		<!--<div id="footer">-->
+		<!--</div>&lt;!&ndash; #footer &ndash;&gt;-->
+
+	<!--</div>&lt;!&ndash; #wrapper &ndash;&gt;-->
+
+<!--</body>-->

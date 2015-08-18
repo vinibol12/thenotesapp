@@ -2,9 +2,10 @@
     cursor: pointer;
 }
 
-.navbar-default {
-    background-color: rgba(207, 206, 190, 0.88);
-    position: absolute;
+.navbar-default.navbar-fixed-top {
+    background-color: rgba(207, 206, 190, 1);
+    position: fixed;
+    top: 0px;
     width: 100%;
 }
 
