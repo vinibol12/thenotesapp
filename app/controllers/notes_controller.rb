@@ -16,17 +16,7 @@ class NotesController < ApplicationController
     end
     notes_trimmed = notes_trimmed.sort_by{|item| item['title']}
 
-    puts '--------------------------------------------------'
-    puts notes_trimmed
-    # responding with only the necessary attributes of each note to the front end.
     respond_with notes_trimmed
-
-
-
-    # current_user_notes = notes.where(user_id: current_user.id)
-    #
-    # respond_with current_user_notes
-
 
   end
 

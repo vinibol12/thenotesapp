@@ -41,7 +41,6 @@ textarea {
     border-radius: 0px;
 }
 
-
 #note-body {
     width: 98%;
     height: 100%;
@@ -61,7 +60,6 @@ textarea {
     /*border-top: none;*/
     border: none;
 }
-
 
 #delete-button{
     float: right;
@@ -98,7 +96,8 @@ textarea {
 #flash-message {
     position: absolute;
     width: 200px;
-    margin-top: -0.8em;
+    margin-top: 0.8em;
+    margin-left: 40%;
     z-index: 1}
 
 #note-preview {
@@ -137,6 +136,7 @@ textarea {
     opacity: 1;
     /*left: 0;*/
 }
+
 #timestamp span {
 margin-top: 10%;
 margin-left: 24%;}

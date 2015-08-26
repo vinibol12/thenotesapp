@@ -1,4 +1,3 @@
-<!--I was making a mistake here. I was passing ng-controller=notesCtrl and I was getting an error-->
 <div  class="resizable-row" resizable r-directions="[]" r-flex="true"   >
     <section  id="left">
         <div class="row">
@@ -15,7 +14,6 @@
             </a>
         </div>
     </section>
-
     <!--right side section wrapper-->
     <section class=" animated fadeIn" id="right"  resizable r-directions="['left']" r-flex="true" >
         <!--flash message only visible on event-->
@@ -27,60 +25,15 @@
 
         <!--wrapper section for the form with title and body-->
         <section  resizable r-directions="[]">
-                  <div>
-                    <input id="note-title" type="text" ng-model="title" class="form-control" placeholder="Untitled">
-                    <textarea  resizable r-directions="['top']" id="note-body" class="form-control" rows="30"
-                              ng-model="body" placeholder="Write your note here..." style="flex-basis: auto 100%" ></textarea>
-                  </div>
-
+            <div>
+                <input id="note-title" type="text" ng-model="title" class="form-control" placeholder="Untitled">
+                <textarea  resizable r-directions="['top']" id="note-body" class="form-control" rows="30"
+                          ng-model="body" placeholder="Write your note here..." style="flex-basis: auto 100%" ></textarea>
+            </div>
         </section>
-
         <div id="timestamp">
             <span>Created on {{noteCreationDate}} at {{noteCreationTime}}</span>
         </div>
     </section>
 </div>
 
-<!--<style>-->
-    <!--body {-->
-    	<!--margin:0;-->
-    	<!--padding:0;-->
-    	<!--height:100%;-->
-    <!--}-->
-    <!--#wrapper {-->
-    	<!--min-height:100%;-->
-    	<!--position:relative;-->
-    <!--}-->
-    <!--#header {-->
-    	<!--background:#ededed;-->
-    	<!--padding:10px;-->
-    <!--}-->
-    <!--#content {-->
-    	<!--padding-bottom:100px; /* Height of the footer element */-->
-    <!--}-->
-    <!--#footer {-->
-        <!--background: #ffab62;-->
-        <!--width: 100%;-->
-        <!--height: 100px;-->
-        <!--position: absolute;-->
-        <!--bottom: 0;-->
-        <!--left: 0;-->
-
-    <!--}-->
-    <!--</style>-->
- <!--<body>-->
-
-	<!--<div id="wrapper">-->
-
- 		<!--<div id="header">-->
-		<!--</div>&lt;!&ndash; #header &ndash;&gt;-->
-
-		<!--<div id="content">-->
- 		<!--</div>&lt;!&ndash; #content &ndash;&gt;-->
-
-		<!--<div id="footer">-->
-		<!--</div>&lt;!&ndash; #footer &ndash;&gt;-->
-
-	<!--</div>&lt;!&ndash; #wrapper &ndash;&gt;-->
-
-<!--</body>-->

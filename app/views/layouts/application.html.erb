@@ -12,10 +12,10 @@
   <!--javascript plugins -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/4.9.1/bootstrap-social.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/4.9.1/bootstrap-social.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
 
-  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 
@@ -23,8 +23,7 @@
 </head>
 
 <body ng-app="theNotesApp">
-
-  <script>
+    <script>
     // This is called with the results from from FB.getLoginStatus().
     function statusChangeCallback(response) {
         console.log('statusChangeCallback');
@@ -103,40 +102,28 @@
                     'Thanks for logging in, ' + response.name + '!';
         });
     }
-  </script>
-
-
-
-<nav class="navbar navbar-default navbar-fixed-top"  style="position: fixed;" ng-controller="navCtrl" ng-show="signedIn()" >
-  <!--<div class="fadein" id="flash_message" flash-message="5000" ></div>-->
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand">The Notes App</a>
-    </div>
-    <div class="collapse navbar-collapse"  id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <!--<li ng-show="notesState()"><a id="delete_button" ng-really-message="Are you sure you want to delete this note?" ng-really-click="deleteNote(note)" class="glyphicon glyphicon-trash "  style="float:left;" >Delete note</a></li>-->
-        <li><a  id="new-note" ng-click="addNote()">+ New Note</a></li>
-        <li ng-hide="signedIn"><a href="#/login">Login</a></li>
-        <li ng-show="signedIn"><a href="">{{user.email}}</a></li>
-        <li class="pointer" ng-show="signedIn"><a ng-click="logout()">Logout</a></li>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-
-
-<ui-view></ui-view>
-
-
-
+    </script>
+    <nav class="navbar navbar-default navbar-fixed-top"  style="position: fixed;" ng-controller="navCtrl" ng-show="signedIn()" >
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand">The Notes App</a>
+        </div>
+        <div class="collapse navbar-collapse"  id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a  id="new-note" ng-click="addNote()">+ New Note</a></li>
+            <li ng-hide="signedIn"><a href="#/login">Login</a></li>
+            <li ng-show="signedIn"><a href="">{{user.email}}</a></li>
+            <li class="pointer" ng-show="signedIn"><a ng-click="logout()">Logout</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <ui-view></ui-view>
 </body>
 </html>

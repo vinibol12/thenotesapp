@@ -7,6 +7,7 @@ angular.module('theNotesApp')
     notesService.getAll = function() {
         return $http.get('/notes.json').success(function(data){
             angular.copy(data, notesService.notesObjectInService);
+            console.log(notesService.notesObjectInService);
         })
     };
     notesService.create = function(note) {
@@ -32,7 +33,6 @@ angular.module('theNotesApp')
     };
 
     return notesService;
-
 
 }])
 

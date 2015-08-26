@@ -5,6 +5,7 @@ angular.module('theNotesApp')
 
         $scope.notesState = function(){return $state.is('notes')}
 
+
         $scope.addNote = function() {
             notesService.create({
                     title: 'Untitled',
@@ -14,12 +15,6 @@ angular.module('theNotesApp')
                 $state.go('notes', note)
             });
         };
-        //notesService.getAll().then(function(res){
-        //
-        //    $scope.cleanArrayOfNotes = res.data;
-        //});
-        //
-        //console.log($scope.cleanArrayOfNotes)
 
 
         // When the controller loads the function below is executed and the currentUser returned promise is set as
@@ -30,9 +25,9 @@ angular.module('theNotesApp')
                 $scope.user = user;
             }, function(error) {
 
-            })
+            });
 
-        };
+        }
 
         $scope.$on('devise:new-registration', function(event, user){
             $scope.user = user;
@@ -46,4 +41,4 @@ angular.module('theNotesApp')
             $state.go('welcome');
             $scope.clear();
         });
-    }])
+    }]);
